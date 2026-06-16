@@ -1,0 +1,4 @@
+allowBuilds:
+  sharp: false
+patchedDependencies:
+  '@futuremove/ui': patches/@futuremove__ui.patch

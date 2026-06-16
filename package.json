@@ -10,14 +10,16 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit"
   },
-  "dependencies": {
-    "@futuremove-consulting/config": "file:../../../futuremove/archive/03-legacy-design-system/packages/config",
-    "@futuremove-consulting/shared": "file:../../../futuremove/archive/03-legacy-design-system/packages/shared",
-    "@futuremove-consulting/ui": "file:../../../futuremove/archive/03-legacy-design-system/packages/ui",
+"dependencies": {
+    "@futuremove/config": "^0.2.0",
+    "@futuremove/shared": "^0.2.0",
+    "@futuremove/ui": "^0.2.0",
+    "@floating-ui/react": "^0.26.0",
     "lucide-react": "^0.400.0",
     "next": "^15.0.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0"
+    "react-dom": "^18.3.0",
+    "react-window": "^1.8.10"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.0",

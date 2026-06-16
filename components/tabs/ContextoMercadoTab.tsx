@@ -1,11 +1,11 @@
 'use client';
 
 import { presentationData } from '@/data/presentation';
-import { Heading } from '@futuremove-consulting/ui';
-import { Card } from '@futuremove-consulting/ui';
-import { Grid } from '@futuremove-consulting/ui';
-import { Stack } from '@futuremove-consulting/ui';
-import { Flex } from '@futuremove-consulting/ui';
+import { Heading } from '@futuremove/ui';
+import { Card } from '@futuremove/ui';
+import { Grid } from '@futuremove/ui';
+import { Stack } from '@futuremove/ui';
+import { Flex } from '@futuremove/ui';
 
 export function ContextoMercadoTab() {
   const data = presentationData.contexto;

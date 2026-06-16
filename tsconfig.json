@@ -24,12 +24,6 @@
     "paths": {
       "@/*": [
         "./*"
-      ],
-      "@futuremove-consulting/ui": [
-        "../../futuremove/archive/03-legacy-design-system/packages/ui/src"
-      ],
-      "@futuremove-consulting/config": [
-        "../../futuremove/archive/03-legacy-design-system/packages/config/src"
       ]
     },
     "baseUrl": ".",

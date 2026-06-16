@@ -10,9 +10,9 @@ export default defineConfig({
     setupFiles: './vitest.setup.ts',
     alias: {
       '@': path.resolve(__dirname, './'),
-      '@futuremove-consulting/ui': path.resolve(__dirname, '../../futuremove/archive/03-legacy-design-system/packages/ui/src'),
-      '@futuremove-consulting/config': path.resolve(__dirname, '../../futuremove/archive/03-legacy-design-system/packages/config/src'),
-      '@futuremove-consulting/shared': path.resolve(__dirname, '../../futuremove/archive/03-legacy-design-system/packages/shared/src'),
+      '@futuremove/ui': path.resolve(__dirname, '../../futuremove/core/fmds/packages/ui/src'),
+      '@futuremove/config': path.resolve(__dirname, '../../futuremove/core/fmds/packages/config/src'),
+      '@futuremove/shared': path.resolve(__dirname, '../../futuremove/core/fmds/packages/shared/src'),
     },
   },
 });

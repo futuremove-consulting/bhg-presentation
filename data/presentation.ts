@@ -29,6 +29,7 @@ export interface PresentationData {
     headline: string;
     subheadline: string;
     swot: {
+      title: string;
       strengths: string[];
       weaknesses: string[];
       opportunities: string[];
@@ -48,6 +49,7 @@ export interface PresentationData {
       dimensions: { label: string; value: string; status: 'exists' | 'missing' | 'critical' }[];
     };
     swot: {
+      title: string;
       strengths: string[];
       weaknesses: string[];
       opportunities: string[];
@@ -192,6 +194,7 @@ export const presentationData: PresentationData = {
     headline: 'Dinâmica Setorial e Lacunas de Mercado',
     subheadline: 'Análise das forças estruturais e espaços não ocupados.',
     swot: {
+      title: 'Análise de Forças e Fraquezas',
       strengths: ['R$ 115B TAM', 'Crescimento 50%+ a.a.', 'Regulação favorável', 'Demanda sistêmica'],
       weaknesses: ['Fragmentação de originação', 'Ausência de padrão de precificação', 'Silos de serviços', 'Regulação em movimento'],
       opportunities: ['Integração Banking + Tributária', 'Distribuição B2B2C (ERPs)', 'Compensação estruturada', 'FIDC de varejo'],
@@ -223,6 +226,7 @@ export const presentationData: PresentationData = {
       ],
     },
     swot: {
+      title: 'Análise de Capacidade Interna',
       strengths: ['CEO com 30 anos de contencioso', 'BHG Consultoria (10y)', 'Escritório próprio (2012)', 'Acesso a ativos'],
       weaknesses: ['Sites fragmentados', 'Falta de narrativa de marca', 'Operação manual', 'Equipe jurídica reduzida'],
       opportunities: ['Integração tribuno-financeira', 'Reforma tributária', 'B2B2C via ERPs', 'Consolidação de mercado'],

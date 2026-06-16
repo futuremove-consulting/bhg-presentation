@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
   trailingSlash: true,
   reactStrictMode: true,
-  transpilePackages: ['@futuremove-consulting/ui', '@futuremove-consulting/config'],
+  transpilePackages: ['@futuremove/ui', '@futuremove/config'],
 };
 
 export default nextConfig;
