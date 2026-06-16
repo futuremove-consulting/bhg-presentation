@@ -1,0 +1,164 @@
+'use client';
+
+import { presentationData } from '@/data/presentation';
+import { Heading } from '@futuremove-consulting/ui';
+import { Card } from '@futuremove-consulting/ui';
+import { Grid } from '@futuremove-consulting/ui';
+import { Stack } from '@futuremove-consulting/ui';
+import { Flex } from '@futuremove-consulting/ui';
+
+export function ContextoMercadoTab() {
+  const data = presentationData.contexto;
+
+  return (
+    <div className="space-y-24">
+      {/* Hero Section */}
+      <section className="py-12 text-center">
+        <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
+          {data.headline}
+        </Heading>
+        <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+          {data.subheadline}
+        </p>
+      </section>
+
+      {/* Market Size Section */}
+      <section className="space-y-12">
+        <div className="text-center space-y-4">
+          <Heading as="h2" size="xl" className="text-white">{data.marketSize.title}</Heading>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {data.marketSize.items.map((item, idx) => (
+            <Card key={idx} variant="bordered" className="p-6">
+              <div className="space-y-2">
+                <span className="text-xs text-gray-500 uppercase tracking-wider">{item.label}</span>
+                <Heading as="h3" size="md" className="text-white">{item.value}</Heading>
+                <p className="text-xs text-gray-400 italic">{item.context}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Growth Dynamics Section */}
+      <section className="space-y-12">
+        <div className="text-center space-y-4">
+          <Heading as="h2" size="xl" className="text-white">{data.growthDynamics.title}</Heading>
+        </div>
+
+        <div className="max-w-5xl mx-auto">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-gray-800 text-xs uppercase text-gray-500">
+                  <th className="py-4 px-4">Segmento</th>
+                  <th className="py-4 px-4">Crescimento</th>
+                  <th className="py-4 px-4">Observação</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.growthDynamics.items.map((item, idx) => (
+                  <tr key={idx} className="border-b border-gray-900/50">
+                    <td className="py-4 px-4 text-white font-medium">{item.segment}</td>
+                    <td className="py-4 px-4 text-orange-500 font-bold">{item.growth}</td>
+                    <td className="py-4 px-4 text-gray-400 text-sm">{item.observation}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive Map Section */}
+      <section className="space-y-12">
+        <div className="text-center space-y-4">
+          <Heading as="h2" size="xl" className="text-white">{data.competitiveMap.title}</Heading>
+          <p className="text-gray-400">{data.competitiveMap.description}</p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-start">
+          {/* Visual Placeholder for Matrix */}
+          <div className="aspect-square bg-gray-900/30 rounded-3xl border border-gray-800 flex items-center justify-center relative overflow-hidden">
+             <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 opacity-10">
+                <div className="border-r border-b border-gray-700" />
+                <div className="border-b border-gray-700" />
+                <div className="border-r border-gray-700" />
+             </div>
+             <div className="relative z-10 text-center space-y-4">
+                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Visual Matrix Representation</div>
+                <div className="flex items-center justify-center gap-4">
+                   <div className="w-3 h-3 rounded-full bg-red-500" />
+                   <span className="text-xs text-gray-400">BHG Atual</span>
+                </div>
+                <div className="flex items-center justify-center gap-4">
+                   <div className="w-3 h-3 rounded-full bg-orange-500" />
+                   <span className="text-xs text-gray-400">BHG Alvo</span>
+                </div>
+             </div>
+          </div>
+
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <Heading as="h3" size="md" className="text-orange-500">Insights de Posicionamento</Heading>
+              <p className="text-gray-300 leading-relaxed">
+                {data.competitiveMap.insight}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4">
+              {data.competitiveMap.players.map((player, idx) => (
+                <Card key={idx} variant="bordered" className="p-4 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white font-bold">{player.name}</span>
+                    <span className="text-[10px] bg-gray-800 px-2 py-0.5 rounded text-gray-400 uppercase tracking-wider">{player.core}</span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-[10px]">
+                    <div className="text-gray-500">Força: <span className="text-gray-300">{player.strength}</span></div>
+                    <div className="text-gray-500">Gap: <span className="text-gray-300">{player.gap}</span></div>
+                    <div className="col-span-2 text-red-400/70">Risco: {player.risk}</div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Triggers Section */}
+      <section className="space-y-12 pb-24">
+        <div className="text-center space-y-4">
+          <Heading as="h2" size="xl" className="text-white">{data.triggers.title}</Heading>
+          <p className="text-gray-400">{data.triggers.description}</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {data.triggers.items.map((trigger, idx) => (
+            <Card key={idx} variant="bordered" className="p-8 space-y-6">
+              <div className="space-y-2">
+                <Heading as="h3" size="md" className="text-orange-500">{trigger.title}</Heading>
+                <p className="text-xs text-gray-400 italic">{trigger.implication}</p>
+              </div>
+              <div className="space-y-3">
+                {trigger.details.map((detail, dIdx) => (
+                  <div key={dIdx} className="flex gap-2 text-sm text-gray-300">
+                    <span className="text-orange-500">•</span>
+                    <span>{detail}</span>
+                  </div>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="p-6 rounded-2xl bg-orange-600/10 border border-orange-600/20">
+            <Heading as="h4" size="sm" className="text-orange-500 mb-2">Janela de Oportunidade</Heading>
+            <p className="text-lg text-white font-medium">{data.triggers.window}</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
