@@ -865,8 +865,6 @@ function renderMatriz(players, xLabel, yLabel) {
 
   return `
     <div class="matrix-wrapper">
-      <h4 class="section-title text-center mb-2">Matriz de Posicionamento Estendida</h4>
-      <p class="text-xs text-gray text-center mb-4">20 players mapeados por integração vertical e escala operacional</p>
       <div class="matrix-container">
         <div class="matrix-svg-wrapper">
           <svg viewBox="0 0 100 100" class="matrix-svg" xmlns="http://www.w3.org/2000/svg">
