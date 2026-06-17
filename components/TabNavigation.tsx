@@ -50,7 +50,7 @@ export function TabNavigation() {
               onClick={() => handleClick(tab.id)}
               className={`whitespace-nowrap px-4 py-2 text-xs md:text-sm font-bold transition-all duration-200 rounded-lg ${
                 activeTab === tab.id
-                  ? 'text-white bg-purple-600/20 border border-purple-600/30'
+                  ? 'text-white bg-white/10 border border-white/20'
                   : 'text-gray-500 hover:text-gray-300 hover:bg-gray-900/50'
               }`}
             >

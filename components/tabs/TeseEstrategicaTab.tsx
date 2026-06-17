@@ -9,7 +9,7 @@ export function TeseEstrategicaTab() {
   const data = presentationData.tese;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
@@ -61,7 +61,7 @@ export function TeseEstrategicaTab() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             <Card variant="bordered" className="p-6">
-              <Heading as="h4" size="sm" className="text-orange-500 mb-4">
+              <Heading as="h4" size="sm" className="text-white mb-4">
                 {data.synergy.intersection.label}
               </Heading>
               <p className="text-gray-300 text-sm leading-relaxed">
@@ -97,13 +97,13 @@ export function TeseEstrategicaTab() {
               <span className="text-xs text-gray-500 uppercase tracking-widest">DE</span>
               <Heading as="h3" size="md" className="text-gray-500 line-through">{data.repositioning.from}</Heading>
             </div>
-            <div className="text-orange-600">
+            <div className="text-gray-600">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </div>
             <div className="space-y-2">
-              <span className="text-xs text-orange-500 uppercase tracking-widest font-bold">PARA</span>
+              <span className="text-xs text-gray-300 uppercase tracking-widest font-bold">PARA</span>
               <Heading as="h3" size="lg" className="text-white">{data.repositioning.to}</Heading>
             </div>
           </div>
@@ -125,7 +125,7 @@ export function TeseEstrategicaTab() {
             <div key={idx} className="relative">
               <Card variant="elevated" className="h-full flex flex-col">
                 <div className="mb-6">
-                  <span className="text-xs font-bold text-orange-500 uppercase">Etapa {idx + 1}</span>
+                  <span className="text-xs font-bold text-gray-400 uppercase">Etapa {idx + 1}</span>
                   <Heading as="h4" size="sm" className="mt-1 text-white">{stage.label}</Heading>
                 </div>
                 

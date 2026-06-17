@@ -11,7 +11,7 @@ export function ContextoMercadoTab() {
   const data = presentationData.contexto;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
@@ -61,7 +61,7 @@ export function ContextoMercadoTab() {
                 {data.growthDynamics.items.map((item, idx) => (
                   <tr key={idx} className="border-b border-gray-900/50">
                     <td className="py-4 px-4 text-white font-medium">{item.segment}</td>
-                    <td className="py-4 px-4 text-orange-500 font-bold">{item.growth}</td>
+                    <td className="py-4 px-4 text-white font-bold">{item.growth}</td>
                     <td className="py-4 px-4 text-gray-400 text-sm">{item.observation}</td>
                   </tr>
                 ))}
@@ -101,7 +101,7 @@ export function ContextoMercadoTab() {
 
           <div className="space-y-8">
             <div className="space-y-4">
-              <Heading as="h3" size="md" className="text-orange-500">Insights de Posicionamento</Heading>
+              <Heading as="h3" size="md" className="text-white">Insights de Posicionamento</Heading>
               <p className="text-gray-300 leading-relaxed">
                 {data.competitiveMap.insight}
               </p>
@@ -137,13 +137,13 @@ export function ContextoMercadoTab() {
           {data.triggers.items.map((trigger, idx) => (
             <Card key={idx} variant="bordered" className="p-8 space-y-6">
               <div className="space-y-2">
-                <Heading as="h3" size="md" className="text-orange-500">{trigger.title}</Heading>
+                <Heading as="h3" size="md" className="text-white">{trigger.title}</Heading>
                 <p className="text-xs text-gray-400 italic">{trigger.implication}</p>
               </div>
               <div className="space-y-3">
                 {trigger.details.map((detail, dIdx) => (
                   <div key={dIdx} className="flex gap-2 text-sm text-gray-300">
-                    <span className="text-orange-500">•</span>
+                    <span className="text-gray-500">•</span>
                     <span>{detail}</span>
                   </div>
                 ))}
@@ -153,8 +153,8 @@ export function ContextoMercadoTab() {
         </div>
 
         <div className="max-w-2xl mx-auto text-center">
-          <div className="p-6 rounded-2xl bg-orange-600/10 border border-orange-600/20">
-            <Heading as="h4" size="sm" className="text-orange-500 mb-2">Janela de Oportunidade</Heading>
+          <div className="p-6 rounded-2xl bg-gray-900 border border-gray-800">
+            <Heading as="h4" size="sm" className="text-white mb-2">Janela de Oportunidade</Heading>
             <p className="text-lg text-white font-medium">{data.triggers.window}</p>
           </div>
         </div>

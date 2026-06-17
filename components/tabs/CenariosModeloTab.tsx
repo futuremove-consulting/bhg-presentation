@@ -9,7 +9,7 @@ export function CenariosModeloTab() {
   const data = presentationData.modelos;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
@@ -26,7 +26,7 @@ export function CenariosModeloTab() {
           {data.models.map((model) => (
             <Card key={model.id} variant="elevated" className="flex flex-col h-full p-8">
               <div className="space-y-4 mb-8">
-                <Heading as="h3" size="md" className="text-orange-500">
+                <Heading as="h3" size="md" className="text-white">
                   {model.name}
                 </Heading>
                 <p className="text-sm text-gray-400 min-h-[3rem] leading-relaxed">
@@ -62,7 +62,7 @@ export function CenariosModeloTab() {
                   </div>
                   <div className="flex justify-between text-xs">
                     <span className="text-gray-500 uppercase tracking-wider">Valuation</span>
-                    <span className="text-orange-500 font-bold">{model.valuation}</span>
+                    <span className="text-white font-bold">{model.valuation}</span>
                   </div>
                 </div>
 

@@ -9,7 +9,7 @@ export function DiagnosticoBHGTab() {
   const data = presentationData.diagnostico;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">

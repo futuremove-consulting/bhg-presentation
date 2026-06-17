@@ -9,7 +9,7 @@ export function VantagensSustentaveisTab() {
   const data = presentationData.vantagens;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
@@ -24,9 +24,9 @@ export function VantagensSustentaveisTab() {
       <section className="space-y-12">
         <Grid className="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.moats.map((moat) => (
-            <Card key={moat.id} variant="bordered" className="flex flex-col h-full p-8 group hover:border-orange-600/50 transition-colors">
+            <Card key={moat.id} variant="bordered" className="flex flex-col h-full p-8 group hover:border-gray-700 transition-colors">
               <div className="mb-6">
-                <Heading as="h3" size="md" className="text-orange-500 mb-2">
+                <Heading as="h3" size="md" className="text-white mb-2">
                   {moat.title}
                 </Heading>
                 <p className="text-sm text-white font-medium">
@@ -58,7 +58,7 @@ export function VantagensSustentaveisTab() {
 
       {/* Synergy Section */}
       <section className="max-w-4xl mx-auto text-center pb-24">
-        <div className="p-12 rounded-3xl bg-gradient-to-b from-orange-600/10 to-transparent border border-orange-600/20">
+        <div className="p-12 rounded-3xl bg-gradient-to-b from-gray-800/50 to-transparent border border-gray-800">
           <Heading as="h2" size="lg" className="mb-6 text-white">
             Fortaleza Inexpugnável
           </Heading>

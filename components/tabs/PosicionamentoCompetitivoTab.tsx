@@ -9,7 +9,7 @@ export function PosicionamentoCompetitivoTab() {
   const data = presentationData.posicionamento;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
@@ -81,7 +81,7 @@ export function PosicionamentoCompetitivoTab() {
 
         <Grid className="grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {data.gaps.items.map((gap, idx) => (
-            <Card key={idx} variant="elevated" className="p-8 space-y-4 border-l-4 border-orange-600">
+            <Card key={idx} variant="elevated" className="p-8 space-y-4 border-l-4 border-gray-700">
               <Heading as="h3" size="md" className="text-white">{gap.title}</Heading>
               <p className="text-sm text-gray-400 leading-relaxed">{gap.description}</p>
             </Card>

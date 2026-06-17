@@ -9,7 +9,7 @@ export function RealizacaoValorTab() {
   const data = presentationData.valor;
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-16">
       {/* Hero Section */}
       <section className="py-12 text-center">
         <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
@@ -29,9 +29,9 @@ export function RealizacaoValorTab() {
 
         <div className="flex justify-center">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 to-orange-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-gray-600 to-gray-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative bg-black border border-gray-800 rounded-2xl px-12 py-16 text-center space-y-4">
-              <Heading as="h3" size="2xl" className="text-orange-500">
+              <Heading as="h3" size="2xl" className="text-white">
                 {data.tam.value}
               </Heading>
               <p className="text-gray-500 text-sm uppercase tracking-widest">
@@ -62,18 +62,18 @@ export function RealizacaoValorTab() {
 
       {/* Conclusion Section */}
       <section className="max-w-3xl mx-auto text-center pb-24">
-        <div className="p-12 rounded-3xl bg-white text-black">
-          <Heading as="h3" size="lg" className="mb-8 text-black">
+        <div className="p-12 rounded-3xl bg-gray-900 border border-gray-800">
+          <Heading as="h3" size="lg" className="mb-8 text-white">
             {data.conclusion.title}
           </Heading>
           <div className="space-y-4 mb-12">
             {data.conclusion.body.map((line, idx) => (
-              <p key={idx} className="text-lg font-medium leading-relaxed text-black">
+              <p key={idx} className="text-lg font-medium leading-relaxed text-gray-300">
                 {line}
               </p>
             ))}
           </div>
-          <div className="inline-block px-8 py-4 bg-black text-white rounded-full font-bold text-lg cursor-pointer hover:bg-gray-800 transition-colors">
+          <div className="inline-block px-8 py-4 bg-white text-black rounded-full font-bold text-lg cursor-pointer hover:bg-gray-200 transition-colors">
             {data.conclusion.cta}
           </div>
         </div>
