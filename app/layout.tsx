@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { TabNavigation } from '@/components/TabNavigation';
 import { Header } from '@/components/Header';
 
 export const metadata: Metadata = {
@@ -22,8 +21,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-black text-white overflow-x-hidden">
         <Header />
-        <TabNavigation />
-        <main className="pt-20 pb-16 px-4 md:px-8 lg:px-16">
+        <main className="pt-28 pb-16 px-4 md:px-8 lg:px-16">
           <div className="max-w-7xl mx-auto">
             {children}
           </div>
