@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 
-h1, h2, h3, h4, h5, h6 { font-family: 'DM Serif Display', serif; font-weight: 400; }
-h1 { font-weight: 400; }
-h2 { font-weight: 400; }
-h3 { font-weight: 400; }
-h4 { font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
 
 :root {
   --bg: #0a0a0a;
@@ -17,8 +13,8 @@ h4 { font-weight: 400; }
   --border-light: #374151;
   --text: #f9fafb;
   --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
-  --text-dim: #4b5563;
+  --text-muted: #8a9aaa;
+  --text-dim: #7a8a9a;
   --purple: #6856f5;
   --purple-light: #8b83f5;
   --emerald: #10b981;

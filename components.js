@@ -450,7 +450,7 @@ function renderGrowthChart(items) {
   }).join('');
 
   return `
-    <svg viewBox="0 0 ${chartW} ${chartH}" class="svg-chart" style="max-width:100%;height:auto;">
+    <svg viewBox="0 0 ${chartW} ${chartH}" class="svg-chart" style="max-width:100%;height:auto;" role="img" aria-label="Gráfico de barras dos segmentos de mercado com crescimento de cada um">
       <line x1="${padL}" y1="${chartH - padB}" x2="${chartW - padR}" y2="${chartH - padB}" stroke="#374151" stroke-width="1"/>
       ${bars}
       ${labels}
@@ -500,7 +500,7 @@ function renderValuationChart(models) {
     <div class="space-y-4">
       <h3 class="section-title text-center">Comparativo de Valuation (5 anos)</h3>
       <div class="chart-box">
-        <svg viewBox="0 0 ${chartW} ${chartH}" class="svg-chart" style="max-width:100%;height:auto;">
+        <svg viewBox="0 0 ${chartW} ${chartH}" class="svg-chart" style="max-width:100%;height:auto;" role="img" aria-label="Comparativo de valuation entre os três modelos em 5 anos">
           <line x1="${padL}" y1="${chartH - padB}" x2="${chartW - padR}" y2="${chartH - padB}" stroke="#374151" stroke-width="1"/>
           <text x="${padL - 25}" y="${chartH - padB - 5}" text-anchor="middle" fill="#6b7280" font-size="10" transform="rotate(-90, ${padL - 25}, ${chartH - padB - 5})">R$</text>
           ${bars}
@@ -703,7 +703,7 @@ function renderMatriz(players, xLabel, yLabel) {
 
 function renderVennDiagram() {
   return `
-    <svg viewBox="0 0 400 300" class="venn-svg">
+    <svg viewBox="0 0 400 300" class="venn-svg" role="img" aria-label="Diagrama de Venn com três círculos sobrepostos: Banking, Tributária e Patrimônio, com interseção estratégica ao centro">
       <defs>
         <radialGradient id="v-blue" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.3"/>

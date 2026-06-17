@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BHG — Executive Intelligence Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,21 +16,21 @@
       <span class="header-brand">FutureMove</span>
       <span class="header-tagline">Consultoria Estratégica</span>
     </div>
-    <nav class="header-nav" role="tablist">
-      <button class="tab-btn active" data-tab="contexto" role="tab" aria-selected="true">CONTEXTO DE MERCADO</button>
-      <button class="tab-btn" data-tab="posicionamento" role="tab" aria-selected="false">POSICIONAMENTO</button>
-      <button class="tab-btn" data-tab="diagnostico" role="tab" aria-selected="false">DIAGNÓSTICO BHG</button>
-      <button class="tab-btn" data-tab="tese" role="tab" aria-selected="false">TESE ESTRATÉGICA</button>
-      <button class="tab-btn" data-tab="modelos" role="tab" aria-selected="false">CENÁRIOS DE MODELO</button>
+    <nav class="header-nav" role="tablist" aria-label="Seções da apresentação">
+      <button class="tab-btn active" data-tab="contexto" id="tab-btn-contexto" role="tab" aria-selected="true" aria-controls="tab-contexto">CONTEXTO DE MERCADO</button>
+      <button class="tab-btn" data-tab="posicionamento" id="tab-btn-posicionamento" role="tab" aria-selected="false" aria-controls="tab-posicionamento">POSICIONAMENTO</button>
+      <button class="tab-btn" data-tab="diagnostico" id="tab-btn-diagnostico" role="tab" aria-selected="false" aria-controls="tab-diagnostico">DIAGNÓSTICO BHG</button>
+      <button class="tab-btn" data-tab="tese" id="tab-btn-tese" role="tab" aria-selected="false" aria-controls="tab-tese">TESE ESTRATÉGICA</button>
+      <button class="tab-btn" data-tab="modelos" id="tab-btn-modelos" role="tab" aria-selected="false" aria-controls="tab-modelos">CENÁRIOS DE MODELO</button>
     </nav>
   </header>
 
   <main class="main-content">
-    <div id="tab-contexto" class="tab-content active" role="tabpanel"></div>
-    <div id="tab-posicionamento" class="tab-content" role="tabpanel"></div>
-    <div id="tab-diagnostico" class="tab-content" role="tabpanel"></div>
-    <div id="tab-tese" class="tab-content" role="tabpanel"></div>
-    <div id="tab-modelos" class="tab-content" role="tabpanel"></div>
+    <div id="tab-contexto" class="tab-content active" role="tabpanel" aria-labelledby="tab-btn-contexto"></div>
+    <div id="tab-posicionamento" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-posicionamento"></div>
+    <div id="tab-diagnostico" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-diagnostico"></div>
+    <div id="tab-tese" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-tese"></div>
+    <div id="tab-modelos" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-modelos"></div>
   </main>
 </div>
 

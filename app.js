@@ -23,7 +23,10 @@ function getTabFromHash() {
 
 function switchTab(tabId) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => {
+    el.classList.remove('active');
+    el.setAttribute('aria-selected', 'false');
+  });
 
   const contentEl = document.getElementById(`tab-${tabId}`);
   const btnEl = document.querySelector(`[data-tab="${tabId}"]`);
@@ -57,6 +60,21 @@ function init() {
       const tab = btn.dataset.tab;
       window.location.hash = tab;
     });
+  });
+
+  const tablist = document.querySelector('[role="tablist"]');
+  tablist.addEventListener('keydown', (e) => {
+    const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+    const currentIdx = tabs.indexOf(document.activeElement);
+    let nextIdx;
+    if (e.key === 'ArrowRight') { nextIdx = (currentIdx + 1) % tabs.length; }
+    else if (e.key === 'ArrowLeft') { nextIdx = (currentIdx - 1 + tabs.length) % tabs.length; }
+    else if (e.key === 'Home') { nextIdx = 0; }
+    else if (e.key === 'End') { nextIdx = tabs.length - 1; }
+    else return;
+    e.preventDefault();
+    tabs[nextIdx].focus();
+    tabs[nextIdx].click();
   });
 }
 
