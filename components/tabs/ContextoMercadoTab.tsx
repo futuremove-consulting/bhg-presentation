@@ -1,7 +1,7 @@
 'use client';
 
 import { presentationData } from '@/data/presentation';
-import { Heading, Card, MatrizPosicionamento } from '@futuremove/ui';
+import { Heading, Card } from '@futuremove/ui';
 import { ExpandedPlayersMatrix } from '@/components/ExpandedPlayersMatrix';
 import { MarketGrowthChart } from '@/components/MarketGrowthChart';
 
