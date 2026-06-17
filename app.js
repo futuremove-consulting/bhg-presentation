@@ -1,15 +1,17 @@
 import {
   renderContextoTab,
+  renderSegmentosTab,
   renderPosicionamentoTab,
   renderDiagnosticoTab,
   renderTeseTab,
   renderModelosTab,
 } from './components.js';
 
-const tabIds = ['contexto', 'posicionamento', 'diagnostico', 'tese', 'modelos'];
+const tabIds = ['contexto', 'segmentos', 'posicionamento', 'diagnostico', 'tese', 'modelos'];
 
 const renderers = {
   contexto: renderContextoTab,
+  segmentos: renderSegmentosTab,
   posicionamento: renderPosicionamentoTab,
   diagnostico: renderDiagnosticoTab,
   tese: renderTeseTab,

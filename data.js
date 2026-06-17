@@ -22,40 +22,388 @@ export const data = {
         { segment: 'Tokenização / RWA', growth: 'R$ 1B+', observation: 'Acura Capital (Hathor)' },
       ],
     },
-    competitiveMap: {
-      title: 'Posicionamento de Players e Lacunas',
-      description: 'Onde os líderes atuais operam e onde reside a oportunidade de integração.',
-      players: [
-        { name: 'Precato', core: 'Financeiro', strength: 'Alto (liderança R$1,5B)', gap: 'Sem tributária integrada', risk: 'Alto (consolidação)' },
-        { name: 'Prêambulo Bank', core: 'Advocacia', strength: 'Alto (1M+ advogados)', gap: 'Sem financeira/tributária', risk: 'Médio-Alto' },
-        { name: 'XP Litigation', core: 'Fundos', strength: 'Médio (marca)', gap: 'Sem originação/banco', risk: 'Médio' },
-        { name: 'Bancos Tradicionais', core: 'Corporate', strength: 'Médio (reputação)', gap: 'Sem especialização/velocidade', risk: 'Médio' },
-        { name: 'GCB / PeerBR', core: 'Holding Fintech', strength: 'Alto (R$3B crédito)', gap: 'Sem jurídico próprio', risk: 'Médio-Alto' },
-      ],
-      insight: 'Nenhum player domina o triângulo Banking + Tributação + Advocacia. O vazio estratégico é a tese.',
-    },
     triggers: {
-      title: 'Três Convergências e a Janela de Oportunidade',
-      description: 'Vetores estruturais convergindo. A janela para posicionamento estratégico se fecha em 18 meses.',
+      title: 'Convergências Estruturais e Janela de Oportunidade',
+      description: 'Vetores estruturais convergindo. A janela para posicionamento estratégico é estimada em 18 meses.',
       items: [
         {
           title: 'Reforma Tributária (2026-2033)',
-          implication: 'Demanda puxada por reestruturação fiscal obrigatória.',
-          details: ['R$ 50B+ em projetos de conformidade nos próximos 7 anos', 'Empresas precisarão de compensação estruturada em massa'],
+          implication: 'Demanda impulsionada por reestruturação fiscal obrigatória.',
+          details: ['R$ 50B+ em projetos de conformidade previstos para os próximos 7 anos', 'Necessidade de compensação estruturada em larga escala'],
         },
         {
           title: 'Regulação CVM 175',
-          implication: 'Barreira de entrada removida — capital abundante para FIDCs.',
-          details: ['Padronização de direitos creditórios acelera securitização', 'Acesso a funding institucional sem restrições de originação'],
+          implication: 'Redução de barreiras de entrada e maior fluidez de capital para FIDCs.',
+          details: ['Padronização de direitos creditórios acelera a securitização', 'Acesso a funding institucional com maior eficiência de originação'],
         },
         {
           title: 'Consolidação do Mercado (12-18 meses)',
-          implication: 'Primeiros-movers capturam market share definitivo.',
-          details: ['Players escalando 50%+ a.a. — concentração acelerada', 'Janela para posicionamento como plataforma integrada se fechando'],
+          implication: 'First-movers tendem a capturar market share dominante.',
+          details: ['Players em fase de escala acelerada — tendência de concentração', 'Janela para posicionamento como plataforma integrada em fase de fechamento'],
         },
       ],
-      window: 'A janela de oportunidade estratégica se fecha em aproximadamente 18 meses. Quem não se posicionar agora como plataforma integrada corre o risco de ser consolidado.',
+      window: 'A janela de oportunidade estratégica é estimada em 18 meses. A ausência de um posicionamento como plataforma integrada aumenta a vulnerabilidade à consolidação por terceiros.',
     },
+  },
+  segmentos: {
+    headline: 'Quem é o Cliente: Segmentação e Psicografia do Mercado',
+    subheadline: 'O mercado de ativos judiciais não é homogêneo. O valor da plataforma BHG reside em resolver dores específicas para três perfis distintos, criando um ecossistema de dependência mútua.',
+    personas: [
+      {
+        id: 'credor',
+        role: 'O Credor (Individual ou Corporate)',
+        archetype: 'Buscador de Liquidez',
+        pains: [
+          'Incerteza total sobre prazos de pagamento',
+          'Desconfiança de intermediários e "promessas" vazias',
+          'Dificuldade em converter ativo jurídico em capital de giro'
+        ],
+        gains: [
+          'Liquidez imediata via antecipação estruturada',
+          'Transparência total via dashboard de acompanhamento',
+          'Segurança jurídica com respaldo de 30 anos de expertise'
+        ],
+        valueProp: 'Transformar a espera passiva do Judiciário em capital ativo para crescimento ou estabilidade.',
+        color: 'var(--blue)'
+      },
+      {
+        id: 'parceiro',
+        role: 'O Parceiro (Advogados e Contadores)',
+        archetype: 'O Multiplicador de Valor',
+        pains: [
+          'Processos manuais e lentos de liquidação de ativos',
+          'Perda de receita por falta de produtos financeiros integrados',
+          'Risco reputacional ao indicar parceiros financeiros não especializados'
+        ],
+        gains: [
+          'Monetização de novas linhas de serviço (Consultoria Financeira)',
+          'Redução drástica do ciclo de fechamento de operações',
+          'Acesso a infraestrutura de banking para seus próprios clientes'
+        ],
+        valueProp: 'Evoluir de um prestador de serviços jurídico/contábil para um consultor de estratégia patrimonial.',
+        color: 'var(--purple)'
+      },
+      {
+        id: 'investidor',
+        role: 'O Investidor (Qualificados e Institucionais)',
+        archetype: 'O Alocador de Alpha',
+        pains: [
+          'Falta de ativos de renda fixa com retornos acima da Selic e risco controlado',
+          'Opacidade na originação e precificação de precatórios',
+          'Dificuldade em escalar alocações sem risco de concentração'
+        ],
+        gains: [
+          'Acesso a ativos reais com colateral judicial robusto',
+          'Sourcing de alta qualidade via orquestração de advocacia e tributação',
+          'Escalabilidade via FIDCs regulados (CVM 175)'
+        ],
+        valueProp: 'Acessar a maior ineficiência de precificação do mercado brasileiro com a menor fricção operacional.',
+        color: 'var(--emerald)'
+      }
+    ],
+    matrix: [
+      { segment: 'Varejo (Precatórios < R$ 100k)', focus: 'Volume e Automação', pain: 'Falta de acesso a crédito', solution: 'Banking Digital + Antecipação Automática' },
+      { segment: 'Mid-Market (R$ 100k - R$ 2M)', focus: 'Eficiência e Estrutura', pain: 'Carga tributária no resgate', solution: 'Tributária Integrada + Planejamento Fiscal' },
+      { segment: 'UHNW / Corporate (> R$ 2M)', focus: 'Estratégia e Gestão', pain: 'Risco de concentração/sucessão', solution: 'Gestão Patrimonial + M&A de Ativos' },
+    ]
+  },
+  posicionamento: {
+    headline: 'Onde Está o Vazio: Lacunas na Matriz Competitiva',
+    subheadline: 'O mercado de ativos judiciais cresce 50%+ a.a., mas ninguém integra banking, tributação e advocacia no mesmo fluxo. O vazio estratégico é a oportunidade.',
+    expandedPlayers: [
+      { name: 'BHG Alvo', x: 85, y: 88, color: '#6856f5' },
+      { name: 'Precato', x: 72, y: 65, color: '#0ea5e9' },
+      { name: 'Prêambulo Bank', x: 68, y: 72, color: '#10b981' },
+      { name: 'GCB / PeerBR', x: 82, y: 55, color: '#06b6d4' },
+      { name: 'PrecPago', x: 58, y: 58, color: '#6366f1' },
+      { name: 'BHG Atual', x: 18, y: 75, color: '#a78bfa' },
+      { name: 'Pactum Consultoria', x: 12, y: 82, color: '#8b5cf6' },
+      { name: 'KPMG / Big Four', x: 35, y: 68, color: '#71717a' },
+      { name: 'JUSCREDI', x: 22, y: 55, color: '#78716c' },
+      { name: 'XP Litigation', x: 78, y: 28, color: '#eab308' },
+      { name: 'Nubank', x: 92, y: 12, color: '#ef4444' },
+      { name: 'Inter', x: 85, y: 18, color: '#f43f5e' },
+      { name: 'Bancos Trad.', x: 88, y: 35, color: '#737373' },
+      { name: 'Mercado Pago', x: 82, y: 22, color: '#14b8a6' },
+      { name: 'Litipay', x: 25, y: 22, color: '#2dd4bf' },
+      { name: 'Preks', x: 18, y: 15, color: '#f59e0b' },
+      { name: 'Acura Capital', x: 28, y: 42, color: '#a78bfa' },
+      { name: 'ComPre', x: 12, y: 10, color: '#78716c' },
+      { name: 'Ativos Prec.', x: 32, y: 35, color: '#3b82f6' },
+      { name: 'Judit', x: 48, y: 20, color: '#60a5fa' },
+    ],
+    swot: {
+      title: 'Forças e Fragilidades Estruturais do Setor',
+      strengths: [
+        { text: 'R$ 115B TAM com crescimento 50%+ a.a.', priority: 'critica', leverage: 'Base para captura de valor em escala' },
+        { text: 'Regulação favorável (CVM 175 + Reforma Tributária)', priority: 'importante', leverage: 'Vento a favor para estruturação de FIDCs' },
+        { text: 'Demanda sistêmica não cíclica', priority: 'importante', leverage: 'Resiliência independente de cenário macro' },
+        { text: 'Baixa penetração de plataformas digitais', priority: 'media', leverage: 'Oportunidade de disrupção via tecnologia' },
+      ],
+      weaknesses: [
+        { text: 'Fragmentação da originação — 270K+ credores sem conexão', priority: 'critica', leverage: 'Integração digital como barreira de entrada' },
+        { text: 'Ausência de padrão de precificação no mercado secundário', priority: 'importante', leverage: 'Spread de informação = margem para quem padronizar' },
+        { text: 'Silos de serviços (jurídico ≠ financeiro ≠ tributário)', priority: 'critica', leverage: 'Integração vertical = vantagem competitiva duradoura' },
+        { text: 'Regulação ainda em movimento — risco de mudança de regras', priority: 'media', leverage: 'Exige compliance ágil como competência central' },
+      ],
+      opportunities: [
+        { text: 'Integração Banking + Tributária + Advocacia (modelo inédito)', priority: 'critica', leverage: 'Oceano azul — sem concorrente direto no curto prazo' },
+        { text: 'Distribuição B2B2C via ecossistemas de ERP (Conta Azul, Omie)', priority: 'importante', leverage: 'Escala sem custo de aquisição direta' },
+        { text: 'Compensação estruturada pós-reforma tributária', priority: 'importante', leverage: 'Demanda obrigatória por reestruturação fiscal' },
+        { text: 'FIDC de varejo com cotas acessíveis (R$ 5K+)', priority: 'media', leverage: 'Novo pool de capital de investidores qualificados' },
+      ],
+      threats: [
+        { text: 'Entrada de bancos tradicionais com capital ilimitado', priority: 'critica', leverage: 'Exige velocidade de execução e barreiras de relacionamento' },
+        { text: 'Consolidação acelerada — líderes escalando 50%+ a.a.', priority: 'importante', leverage: 'Janela de catch-up se fechando rapidamente' },
+        { text: 'Mudanças regulatórias imprevisíveis', priority: 'media', leverage: 'Diversificação de linhas como hedge natural' },
+        { text: 'Novos entrantes com capital de venture', priority: 'media', leverage: 'Vantagem de conhecimento setorial vs. velocidade digital' },
+      ],
+    },
+    gaps: {
+      title: 'Espaços Vazios na Matriz Competitiva',
+      items: [
+        { title: 'Integração Vertical', description: 'Ninguém executa Banking + Tributação + Advocacia no mesmo fluxo. O cliente precisa de 3 a 4 fornecedores diferentes para resolver um problema integrado.' },
+        { title: 'Distribuição B2B2C', description: 'Nenhum player desenvolveu presença em ecossistemas de ERP (Conta Azul, Omie, SAP). A distribuição ainda é reativa e baseada em relacionamento.' },
+        { title: 'Transparência de Precificação', description: 'Mercado opera via propostas comerciais subjetivas. Ausência de tabela pública gera desconfiança e ineficiência de alocação.' },
+        { title: 'FIDC de Varejo', description: 'Ausência de cotas acessíveis (R$ 5K+) para investidores qualificados. Mercado de capitais ainda restrito a grandes players institucionais.' },
+      ],
+    },
+  },
+  diagnostico: {
+    headline: 'O Paradoxo BHG: 30 Anos de Expertise, Zero Presença Digital',
+    subheadline: 'BHG tem capacidade técnica para competir em qualquer dimensão do mercado de ativos judiciais — mas sua expressão de mercado é praticamente invisível. Três gaps críticos explicam o paradoxo.',
+    matrix: {
+      title: 'Posição de BHG na Matriz de Integração',
+      description: 'O gap entre a capacidade instalada e a expressão de mercado.',
+      dimensions: [
+        { label: 'Especialização Jurídica', value: 'Muito Alta (CEO 30y)', status: 'exists' },
+        { label: 'Integração Banking', value: 'Em expansão — base existente', status: 'exists' },
+        { label: 'Integração Tributária', value: '10 anos de operação consolidada', status: 'exists' },
+        { label: 'Plataforma Digital', value: 'Inexistente — operação em silos', status: 'critical', gap: 'GAP CRÍTICO #1' },
+        { label: 'Marca e Posicionamento', value: 'Genérica — invisível no mercado', status: 'critical', gap: 'GAP CRÍTICO #2' },
+        { label: 'Distribuição e Canais', value: 'Nenhum — 100% reativa', status: 'critical', gap: 'GAP CRÍTICO #3' },
+      ],
+    },
+    swot: {
+      title: 'Análise de Capacidade Interna BHG',
+      strengths: [
+        { text: 'CEO com 30 anos de contencioso de massa', priority: 'critica', leverage: 'Profundidade técnica como alicerce da tese' },
+        { text: 'BHG Consultoria — 10 anos de operação tributária', priority: 'importante', leverage: 'Base para integração tributo-financeira' },
+        { text: 'Escritório próprio desde 2012', priority: 'media', leverage: 'Estrutura consolidada para suportar crescimento' },
+        { text: 'Acesso a ativos e relacionamentos no setor', priority: 'importante', leverage: 'Vantagem de originação vs. entrantes digitais' },
+      ],
+      weaknesses: [
+        { text: 'Sites e marcas fragmentadas — zero unidade de comunicação', priority: 'critica', leverage: 'Unificação digital como alavanca de curto prazo' },
+        { text: 'Falta de narrativa de marca e posicionamento de mercado', priority: 'critica', leverage: 'Reposicionamento como plataforma integrada' },
+        { text: 'Operação manual — sem processos digitalizados', priority: 'importante', leverage: 'Automação como multiplicador de capacidade' },
+        { text: 'Equipe jurídica reduzida para escala', priority: 'media', leverage: 'Tecnologia como alavanca de produtividade' },
+      ],
+      opportunities: [
+        { text: 'Integração tributo-financeira como diferencial competitivo', priority: 'critica', leverage: 'Posicionamento único vs. Precato e Prêambulo' },
+        { text: 'Reforma tributária como demanda puxada por serviços integrados', priority: 'importante', leverage: 'Vento a favor para estruturação de compensações' },
+        { text: 'Distribuição B2B2C via ERPs e canais parceiros', priority: 'importante', leverage: 'Escala sem investimento em aquisição direta' },
+        { text: 'Consolidação de mercado abre espaço para plataformas integradas', priority: 'media', leverage: 'Janela para capturar market share de players fragmentados' },
+      ],
+      threats: [
+        { text: 'Expansão de competidores estabelecidos (Precato, Prêambulo)', priority: 'critica', leverage: 'Velocidade de execução como único diferencial temporal' },
+        { text: 'Mudanças regulatórias que alterem o modelo de negócio', priority: 'importante', leverage: 'Flexibilidade de modelo como hedge regulatório' },
+        { text: 'Consolidação acelerada pode fechar janela de oportunidade', priority: 'importante', leverage: 'Decisão de posicionamento nos próximos 12 meses' },
+      ],
+    },
+  },
+  tese: {
+    headline: 'Por Que Integração Gera 3-5x Mais Valor',
+    subheadline: 'Empresas integradas (banking + tributação + advocacia) multiplicam valuation por 3-5x versus prestadores de serviços isolados. A tese BHG é capturar esse prêmio via orquestração de jornada.',
+    synergy: {
+      title: 'Interseção de Serviços: Onde o Capital é Otimizado',
+      description: 'Banking + Tributária + Patrimônio não são linhas de negócio separadas — são engrenagens de uma mesma máquina de criação de valor.',
+      elements: [
+        { label: 'Banking', color: 'blue' },
+        { label: 'Tributária', color: 'purple' },
+        { label: 'Patrimônio', color: 'emerald' },
+      ],
+      intersection: {
+        label: 'Interseção Estratégica',
+        description: 'O cliente que transita por todos os três serviços tem LTV 5x maior, CAC 60% menor e taxa de retenção superior a 90%.',
+      },
+      example: {
+        title: 'Exemplo de Orquestração',
+        steps: [
+          'Ativo: Precatório R$ 1M + Débito Tributário R$ 1M',
+          'Crédito (70% LTV) + Compensação Estruturada → +R$ 200K de ganho líquido',
+          'Excedente financeiro → Gestão Patrimonial → Taxa de performance recorrente',
+          'Resultado: 3 fluxos de receita de um mesmo cliente, sem custo adicional de aquisição',
+        ],
+      },
+    },
+    repositioning: {
+      title: 'Mudança de Modelo: De Prestador a Plataforma',
+      description: 'Múltiplos de valuation refletem o modelo de negócio: prestadores transacionais são avaliados em 2-3x EBITDA; plataformas integradas alcançam 8-12x EBITDA.',
+      from: 'Prestador de Serviços (Transacional — 2-3x EBITDA)',
+      to: 'Plataforma de Inteligência (Lock-in — 8-12x EBITDA)',
+      valueProp: 'A transição de vender serviços fragmentados para orquestrar a jornada completa do cliente multiplica o valor da empresa.',
+    },
+    valueChain: {
+      title: 'Jornada do Cliente: Loop de Criação de Valor',
+      description: 'Do diagnóstico ao patrimônio — cada etapa adiciona uma camada de receita e aprofunda o lock-in do cliente.',
+      stages: [
+        { label: 'Mapeamento', input: 'Diagnóstico de Ativos', revenue1: 'Setup Fee', revenue2: 'Análise de Risco', revenue3: 'Zero' },
+        { label: 'Liquidez', input: 'Antecipação/Crédito', revenue1: 'Spread de Antecipação', revenue2: 'Taxa de Estruturação', revenue3: 'Zero' },
+        { label: 'Otimização', input: 'Eficiência Fiscal', revenue1: 'Fee de Êxito (Compensação)', revenue2: 'Consultoria Tributária', revenue3: 'Zero' },
+        { label: 'Patrimônio', input: 'Gestão de Excedente', revenue1: 'Management Fee', revenue2: 'Performance Fee', revenue3: 'AUM Residual' },
+      ],
+    },
+    roadmap: {
+      title: 'Roadmap de Evolução: Rumo à Plataforma',
+      description: 'A transição de modelo deve ser executada de forma faseada para mitigar riscos operacionais e maximizar a captura de valor.',
+      phases: [
+        {
+          phase: 'Fase 1: Fundação (0-6 meses)',
+          focus: 'Identidade & Infraestrutura',
+          milestones: ['Unificação de Marcas e Narrativa Estratégica', 'Lançamento do MVP Digital (Diagnóstico)', 'Estruturação do primeiro veículo de liquidez'],
+          goal: 'Estabelecer presença de mercado e validar a tração do modelo integrado.'
+        },
+        {
+          phase: 'Fase 2: Expansão (6-12 meses)',
+          focus: 'Distribuição & Escala',
+          milestones: ['Integração com Ecossistemas B2B (ERPs)', 'Lançamento de FIDCs de Varejo', 'Automação do fluxo Tributário $\rightarrow$ Financeiro'],
+          goal: 'Escalar a originação via canais parceiros e otimizar o custo de aquisição (CAC).'
+        },
+        {
+          phase: 'Fase 3: Ecossistema (12-24 meses)',
+          focus: 'Liderança & Lock-in',
+          milestones: ['Lançamento da Gestão Patrimonial Integrada', 'Expansão para novos ativos judiciais', 'Consolidação do triângulo Banking-Tributo-Jurídico'],
+          goal: 'Alcançar o valuation de Plataforma (8-12x EBITDA) via retenção estratégica do cliente.'
+        }
+      ]
+    },
+  },
+  modelos: {
+    headline: 'Três Caminhos Estratégicos: Definição de Modelo',
+    subheadline: 'Cada caminho estratégico representa uma aposta distinta em margem, escala e valuation. A definição do modelo impacta diretamente a captura de valor e o múltiplo de saída da companhia.',
+    models: [
+      {
+        id: 'especialista',
+        name: 'Modelo Especialista',
+        subtitle: 'High-Margin, Low-Volume',
+        focus: 'UHNW + M&A Complexo',
+        ticket: 'R$ 5M - R$ 50M',
+        volume: '5-20 clientes/ano',
+        revenue: 'Fees altos (2-5%)',
+        margin: '55-65%',
+        cac: 'Praticamente Zero',
+        valuation: 'R$ 80-120M (5y)',
+        risk: 'Concentração de Clientes',
+        whenToChoose: [
+          { type: 'pros', text: 'Priorização de margem em detrimento de escala' },
+          { type: 'pros', text: 'Diferencial baseado em profundidade técnica e exclusividade' },
+          { type: 'cons', text: 'Aceitação de múltiplos de valuation conservadores (2-3x EBITDA)' },
+        ],
+        description: 'Foco em operações de alta complexidade e profundidade de relacionamento. Lucro elevado, escala limitada.',
+      },
+      {
+        id: 'plataforma',
+        name: 'Modelo Plataforma',
+        subtitle: 'Scale-up via B2B2C',
+        focus: 'PMEs via Parceiros',
+        ticket: 'R$ 100k - R$ 2M',
+        volume: '100-500 clientes/ano',
+        revenue: 'Revenue Share (5-10%)',
+        margin: '35-45%',
+        cac: 'Médio (Parceiros)',
+        valuation: 'R$ 300-400M (5y)',
+        risk: 'Dependência de Canais',
+        whenToChoose: [
+          { type: 'pros', text: 'Objetivo de crescimento acelerado (10x em 5 anos)' },
+          { type: 'pros', text: 'Ativo centrado em tecnologia e processos escaláveis' },
+          { type: 'cons', text: 'Dependência estratégica de canais parceiros para distribuição' },
+        ],
+        description: 'Atua como infraestrutura de distribuição para parceiros de ecossistema. Equilíbrio entre escala e margem.',
+      },
+      {
+        id: 'ecossistema',
+        name: 'Modelo Ecossistema',
+        subtitle: 'Max Retention & Valuation',
+        focus: 'Mid-Market + Complexidade',
+        ticket: 'R$ 500k - R$ 10M',
+        volume: '100-300 clientes/ano',
+        revenue: 'Múltiplos Fluxos',
+        margin: '40-50%',
+        cac: 'Médio-Alto',
+        valuation: 'R$ 800M-1.2B (5y)',
+        risk: 'Complexidade de Execução',
+        whenToChoose: [
+          { type: 'pros', text: 'Ambição de construir o sistema operacional do mercado' },
+          { type: 'pros', text: 'Busca por valuation máximo (8-12x EBITDA)' },
+          { type: 'cons', text: 'Capacidade de gerir alta complexidade operacional integrada' },
+        ],
+        description: 'O sistema operacional que retém o cliente em todas as dimensões financeiras. Valuation máximo, execução complexa.',
+      },
+    ],
+    conclusion: 'A definição do modelo deve alinhar a visão de longo prazo com a capacidade de execução e a tolerância ao risco. A inércia nesta definição representa o maior risco estratégico ao projeto.',
+  },
+};
+  segmentos: {
+    headline: 'Quem é o Cliente: Segmentação e Psicografia do Mercado',
+    subheadline: 'O mercado de ativos judiciais não é homogêneo. O valor da plataforma BHG reside em resolver dores específicas para três perfis distintos, criando um ecossistema de dependência mútua.',
+    personas: [
+      {
+        id: 'credor',
+        role: 'O Credor (Individual ou Corporate)',
+        archetype: 'Buscador de Liquidez',
+        pains: [
+          'Incerteza total sobre prazos de pagamento',
+          'Desconfiança de intermediários e "promessas" vazias',
+          'Dificuldade em converter ativo jurídico em capital de giro'
+        ],
+        gains: [
+          'Liquidez imediata via antecipação estruturada',
+          'Transparência total via dashboard de acompanhamento',
+          'Segurança jurídica com respaldo de 30 anos de expertise'
+        ],
+        valueProp: 'Transformar a espera passiva do Judiciário em capital ativo para crescimento ou estabilidade.',
+        color: 'var(--blue)'
+      },
+      {
+        id: 'parceiro',
+        role: 'O Parceiro (Advogados e Contadores)',
+        archetype: 'O Multiplicador de Valor',
+        pains: [
+          'Processos manuais e lentos de liquidação de ativos',
+          'Perda de receita por falta de produtos financeiros integrados',
+          'Risco reputacional ao indicar parceiros financeiros não especializados'
+        ],
+        gains: [
+          'Monetização de novas linhas de serviço (Consultoria Financeira)',
+          'Redução drástica do ciclo de fechamento de operações',
+          'Acesso a infraestrutura de banking para seus próprios clientes'
+        ],
+        valueProp: 'Evoluir de um prestador de serviços jurídico/contábil para um consultor de estratégia patrimonial.',
+        color: 'var(--purple)'
+      },
+      {
+        id: 'investidor',
+        role: 'O Investidor (Qualificados e Institucionais)',
+        archetype: 'O Alocador de Alpha',
+        pains: [
+          'Falta de ativos de renda fixa com retornos acima da Selic e risco controlado',
+          'Opacidade na originação e precificação de precatórios',
+          'Dificuldade em escalar alocações sem risco de concentração'
+        ],
+        gains: [
+          'Acesso a ativos reais com colateral judicial robusto',
+          'Sourcing de alta qualidade via orquestração de advocacia e tributação',
+          'Escalabilidade via FIDCs regulados (CVM 175)'
+        ],
+        valueProp: 'Acessar a maior ineficiência de precificação do mercado brasileiro com a menor fricção operacional.',
+        color: 'var(--emerald)'
+      }
+    ],
+    matrix: [
+      { segment: 'Varejo (Precatórios < R$ 100k)', focus: 'Volume e Automação', pain: 'Falta de acesso a crédito', solution: 'Banking Digital + Antecipação Automática' },
+      { segment: 'Mid-Market (R$ 100k - R$ 2M)', focus: 'Eficiência e Estrutura', pain: 'Carga tributária no resgate', solution: 'Tributária Integrada + Planejamento Fiscal' },
+      { segment: 'UHNW / Corporate (> R$ 2M)', focus: 'Estratégia e Gestão', pain: 'Risco de concentração/sucessão', solution: 'Gestão Patrimonial + M&A de Ativos' },
+    ]
   },
   posicionamento: {
     headline: 'Onde Está o Vazio: Lacunas na Matriz Competitiva',
@@ -175,12 +523,37 @@ export const data = {
       title: 'Jornada do Cliente: Loop de Criação de Valor',
       description: 'Do diagnóstico ao patrimônio — cada etapa adiciona uma camada de receita e aprofunda o lock-in do cliente.',
       stages: [
-        { label: 'Mapeamento', input: 'Diagnóstico de Ativos', revenue1: 'Zero', revenue2: 'Taxa Diagnóstico', revenue3: 'Zero' },
-        { label: 'Liquidez', input: 'Antecipação/Crédito', revenue1: 'Deságio/Fee', revenue2: 'Fluxo de Caixa', revenue3: 'Zero' },
-        { label: 'Otimização', input: 'Eficiência Fiscal', revenue1: 'Fee Compensação', revenue2: 'Redução de Passivo', revenue3: 'Zero' },
-        { label: 'Patrimônio', input: 'Gestão de Excedente', revenue1: 'Taxa de Gestão', revenue2: 'Performance', revenue3: 'LTV Perpétuo' },
+        { label: 'Mapeamento', input: 'Diagnóstico de Ativos', revenue1: 'Setup Fee', revenue2: 'Análise de Risco', revenue3: 'Zero' },
+        { label: 'Liquidez', input: 'Antecipação/Crédito', revenue1: 'Spread de Antecipação', revenue2: 'Taxa de Estruturação', revenue3: 'Zero' },
+        { label: 'Otimização', input: 'Eficiência Fiscal', revenue1: 'Fee de Êxito (Compensação)', revenue2: 'Consultoria Tributária', revenue3: 'Zero' },
+        { label: 'Patrimônio', input: 'Gestão de Excedente', revenue1: 'Management Fee', revenue2: 'Performance Fee', revenue3: 'AUM Residual' },
       ],
     },
+    roadmap: {
+      title: 'Roadmap de Evolução: Rumo à Plataforma',
+      description: 'A transição de modelo não ocorre instantaneamente. Propomos três ondas de maturidade para mitigar riscos e maximizar a captura de valor.',
+      phases: [
+        {
+          phase: 'Fase 1: Fundação (0-6 meses)',
+          focus: 'Identidade & Infraestrutura',
+          milestones: ['Unificação de Marcas e Narrativa', 'Lançamento do MVP Digital (Diagnóstico)', 'Estruturação do primeiro veículo de liquidez'],
+          goal: 'Sair da invisibilidade e validar a tração do modelo integrado.'
+        },
+        {
+          phase: 'Fase 2: Expansão (6-12 meses)',
+          focus: 'Distribuição & Escala',
+          milestones: ['Integração com Ecossistemas B2B (ERPs)', 'Lançamento de FIDCs de Varejo', 'Automação do fluxo Tributário $\rightarrow$ Financeiro'],
+          goal: 'Escalar a originação via canais parceiros e reduzir CAC.'
+        },
+        {
+          phase: 'Fase 3: Ecossistema (12-24 meses)',
+          focus: 'Liderança & Lock-in',
+          milestones: ['Lançamento da Gestão Patrimonial Integrada', 'Expansão para novos ativos judiciais', 'Domínio do triângulo Banking-Tributo-Jurídico'],
+          goal: 'Alcançar o valuation de Plataforma (8-12x EBITDA) via retenção total.'
+        }
+      ]
+    },
+  },
   },
   modelos: {
     headline: 'Três Caminhos, Três Futuros: Escolha Seu Modelo',

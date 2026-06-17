@@ -40,39 +40,6 @@ export function renderContextoTab() {
     </section>
     <div class="section-divider"></div>
 
-    <section class="section">
-      <div class="section-header centered">
-        <div class="section-label centered">Competição</div>
-        <h2 class="section-title">${d.competitiveMap.title}</h2>
-        <p class="section-desc">${d.competitiveMap.description}</p>
-      </div>
-      <div class="grid-2 gap-12">
-        <div>${renderExpandedMatrix()}</div>
-        <div class="space-y-8">
-          <div class="space-y-4">
-            <h3 class="subsection-title">Insights de Posicionamento</h3>
-            <p class="text-gray text-pretty">${d.competitiveMap.insight}</p>
-          </div>
-          <div class="player-cards">
-            ${d.competitiveMap.players.map(p => `
-              <div class="card card-bordered p-5">
-                <div class="player-header">
-                  <span class="player-name">${p.name}</span>
-                  <span class="player-core">${p.core}</span>
-                </div>
-                <div class="player-details">
-                  <span class="detail-label">Força: <span class="detail-value">${p.strength}</span></span>
-                  <span class="detail-label">Gap: <span class="detail-value">${p.gap}</span></span>
-                  <span class="detail-risk">Risco: ${p.risk}</span>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="section-divider"></div>
-
     <section class="section pb-24">
       <div class="section-header centered">
         <div class="section-label centered">Janela de Oportunidade</div>
@@ -100,11 +67,11 @@ export function renderContextoTab() {
   `;
 }
 
-export function renderPosicionamentoTab() {
-  const d = data.posicionamento;
+export function renderSegmentosTab() {
+  const d = data.segmentos;
   return `
     <section class="section hero-section">
-      <div class="section-label centered">Análise Setorial</div>
+      <div class="section-label centered">Psicografia de Mercado</div>
       <h1 class="hero-title">${d.headline}</h1>
       <p class="hero-subtitle">${d.subheadline}</p>
     </section>
@@ -112,8 +79,120 @@ export function renderPosicionamentoTab() {
 
     <section class="section">
       <div class="section-header centered">
-        <div class="section-label centered">Análise SWOT</div>
-        <h2 class="section-title">${d.swot.title || 'Dinâmica Setorial'}</h2>
+        <div class="section-label centered">Arquétipos de Personas</div>
+        <h2 class="section-title">Quem Movemos e Para Onde</h2>
+      </div>
+      <div class="grid-3">
+        ${d.personas.map(p => renderPersonaCard(p)).join('')}
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section pb-24">
+      <div class="section-header centered">
+        <div class="section-label centered">Matriz de Valor por Segmento</div>
+        <h2 class="section-title">A Solução BHG para Cada Perfil</h2>
+      </div>
+      <div class="max-w-6xl mx-auto">
+        ${renderSegmentMatrix(d.matrix)}
+      </div>
+    </section>
+  `;
+}
+
+function renderPersonaCard(p) {
+  return `
+    <div class="card card-elevated p-8" style="border-top: 4px solid ${p.color}">
+      <div class="mb-4">
+        <span class="section-label tiny" style="color: ${p.color}">${p.archetype}</span>
+        <h3 class="subsection-title" style="margin-top: 8px">${p.role}</h3>
+      </div>
+      <div class="space-y-6">
+        <div>
+          <h4 class="metric-label" style="color: var(--red)">Dores Críticas</h4>
+          <ul class="trigger-details">
+            ${p.pains.map(pain => `<li>${pain}</li>`).join('')}
+          </ul>
+        </div>
+        <div>
+          <h4 class="metric-label" style="color: var(--emerald)">Ganhos Esperados</h4>
+          <ul class="trigger-details">
+            ${p.gains.map(gain => `<li>${gain}</li>`).join('')}
+          </ul>
+        </div>
+        <div class="p-5" style="background: rgba(255,255,255,0.03); border-radius: var(--radius-sm); border-left: 2px solid ${p.color}">
+          <p class="card-text" style="font-style: italic; font-weight: 500">"${p.valueProp}"</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderSegmentMatrix(matrix) {
+  return `
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Segmento de Mercado</th>
+            <th>Foco Estratégico</th>
+            <th>Principal Dor</th>
+            <th>Solução BHG</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${matrix.map(s => `
+            <tr>
+              <td class="cell-label bold">${s.segment}</td>
+              <td class="cell-value">${s.focus}</td>
+              <td class="cell-desc" style="color: var(--red)">${s.pain}</td>
+              <td class="cell-value" style="color: var(--emerald)">${s.solution}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+export function renderPosicionamentoTab() {
+  const d = data.posicionamento;
+  return `
+    <section class="section hero-section">
+      <div class="section-label centered">Análise de Mercado</div>
+      <h1 class="hero-title">${d.headline}</h1>
+      <p class="hero-subtitle">${d.subheadline}</p>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Panorama Competitivo</div>
+        <h2 class="section-title">Mapeamento de Players</h2>
+        <p class="section-desc">Visão geral da distribuição de competências e escala no setor.</p>
+      </div>
+      <div class="max-w-7xl mx-auto">
+        ${renderLandscape()}
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Análise Detalhada</div>
+        <h2 class="section-title">Matriz de Posicionamento Estendida</h2>
+        <p class="section-desc">Análise granular de integração vertical vs. escala operacional.</p>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        ${renderExpandedMatrix()}
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Dinâmica Setorial</div>
+        <h2 class="section-title">${d.swot.title || 'SWOT do Mercado'}</h2>
       </div>
       <div class="max-w-5xl mx-auto">
         ${renderSWOT(d.swot)}
@@ -121,9 +200,9 @@ export function renderPosicionamentoTab() {
     </section>
     <div class="section-divider"></div>
 
-    <section class="section">
+    <section class="section pb-24">
       <div class="section-header centered">
-        <div class="section-label centered">Lacunas</div>
+        <div class="section-label centered">O Vazio Estratégico</div>
         <h2 class="section-title">${d.gaps.title}</h2>
       </div>
       <div class="grid-2">
@@ -133,17 +212,6 @@ export function renderPosicionamentoTab() {
             <p class="card-desc">${g.description}</p>
           </div>
         `).join('')}
-      </div>
-    </section>
-    <div class="section-divider"></div>
-
-    <section class="section pb-24">
-      <div class="section-header centered">
-        <div class="section-label centered">Panorama</div>
-        <h2 class="section-title">Panorama Competitivo</h2>
-      </div>
-      <div class="max-w-7xl mx-auto">
-        ${renderLandscape()}
       </div>
     </section>
   `;
@@ -295,6 +363,36 @@ export function renderTeseTab() {
         `).join('')}
       </div>
     </section>
+    <div class="section-divider"></div>
+    <section class="section pb-24">
+      <div class="section-header centered">
+        <div class="section-label centered">Execução</div>
+        <h2 class="section-title">${d.roadmap.title}</h2>
+        <p class="section-desc">${d.roadmap.description}</p>
+      </div>
+      ${renderRoadmap(d.roadmap.phases)}
+    </section>
+  `;
+}
+
+function renderRoadmap(phases) {
+  return `
+    <div class="grid-3">
+      ${phases.map((p, i) => `
+        <div class="card card-bordered p-8" style="position: relative; overflow: hidden">
+          <div class="section-label" style="background: var(--purple); color: #fff; border: none; margin-bottom: 16px">Fase ${i + 1}</div>
+          <h3 class="subsection-title" style="font-size: 1.25rem">${p.phase}</h3>
+          <p class="metric-label" style="margin-bottom: 16px; color: var(--purple)">Foco: ${p.focus}</p>
+          <ul class="trigger-details">
+            ${p.milestones.map(m => `<li>${m}</li>`).join('')}
+          </ul>
+          <div class="p-5" style="margin-top: 24px; background: rgba(104,86,245,0.05); border-radius: var(--radius-sm); border-left: 3px solid var(--purple)">
+            <span class="metric-label">Objetivo:</span>
+            <p class="text-sm" style="font-weight: 500">${p.goal}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
   `;
 }
 
@@ -633,28 +731,7 @@ function renderLandscape() {
 }
 
 function renderExpandedMatrix() {
-  const players = [
-    { name: 'BHG Alvo', x: 85, y: 88, color: '#6856f5' },
-    { name: 'Precato', x: 72, y: 65, color: '#0ea5e9' },
-    { name: 'Prêambulo Bank', x: 68, y: 72, color: '#10b981' },
-    { name: 'GCB / PeerBR', x: 82, y: 55, color: '#06b6d4' },
-    { name: 'PrecPago', x: 58, y: 58, color: '#6366f1' },
-    { name: 'BHG Atual', x: 18, y: 75, color: '#a78bfa' },
-    { name: 'Pactum Consultoria', x: 12, y: 82, color: '#8b5cf6' },
-    { name: 'KPMG / Big Four', x: 35, y: 68, color: '#71717a' },
-    { name: 'JUSCREDI', x: 22, y: 55, color: '#78716c' },
-    { name: 'XP Litigation', x: 78, y: 28, color: '#eab308' },
-    { name: 'Nubank', x: 92, y: 12, color: '#ef4444' },
-    { name: 'Inter', x: 85, y: 18, color: '#f43f5e' },
-    { name: 'Bancos Trad.', x: 88, y: 35, color: '#737373' },
-    { name: 'Mercado Pago', x: 82, y: 22, color: '#14b8a6' },
-    { name: 'Litipay', x: 25, y: 22, color: '#2dd4bf' },
-    { name: 'Preks', x: 18, y: 15, color: '#f59e0b' },
-    { name: 'Acura Capital', x: 28, y: 42, color: '#a78bfa' },
-    { name: 'ComPre', x: 12, y: 10, color: '#78716c' },
-    { name: 'Ativos Prec.', x: 32, y: 35, color: '#3b82f6' },
-    { name: 'Judit', x: 48, y: 20, color: '#60a5fa' },
-  ];
+  const players = data.posicionamento.expandedPlayers;
   return renderMatriz(players, 'Escala Operacional →', 'Integração Vertical →');
 }
 
