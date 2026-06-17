@@ -1,8 +1,7 @@
 'use client';
 
 import { presentationData } from '@/data/presentation';
-import { Heading } from '@futuremove/ui';
-import { Card } from '@futuremove/ui';
+import { Heading, Card, MatrizPosicionamento } from '@futuremove/ui';
 
 export function ContextoMercadoTab() {
   const data = presentationData.contexto;
@@ -12,7 +11,7 @@ export function ContextoMercadoTab() {
       {/* Hero Section */}
       <section className="py-24 text-center">
         <div className="section-label justify-center">Panorama Geral</div>
-        <Heading as="h1" size="2xl" className="mb-6 text-balance text-white max-w-5xl mx-auto">
+        <Heading as="h1" size="2xl" className="mb-6 text-white text-pretty max-w-4xl mx-auto">
           {data.headline}
         </Heading>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -86,24 +85,16 @@ export function ContextoMercadoTab() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-start">
-          <div className="aspect-square bg-gray-900/30 rounded-3xl border border-gray-800 flex items-center justify-center relative overflow-hidden">
-             <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 opacity-10">
-                <div className="border-r border-b border-gray-700" />
-                <div className="border-b border-gray-700" />
-                <div className="border-r border-gray-700" />
-             </div>
-             <div className="relative z-10 text-center space-y-4">
-                <div className="text-[10px] uppercase tracking-[0.3em] text-gray-500">Visual Matrix Representation</div>
-                <div className="flex items-center justify-center gap-4">
-                   <div className="w-3 h-3 rounded-full bg-red-500" />
-                   <span className="text-xs text-gray-400">BHG Atual</span>
-                </div>
-                <div className="flex items-center justify-center gap-4">
-                   <div className="w-3 h-3 rounded-full bg-orange-500" />
-                   <span className="text-xs text-gray-400">BHG Alvo</span>
-                </div>
-             </div>
-          </div>
+          <MatrizPosicionamento players={[
+            { name: 'Precato', x: 72, y: 72, color: 'bg-sky-500 text-sky-500' },
+            { name: 'Prêambulo Bank', x: 28, y: 25, color: 'bg-emerald-500 text-emerald-500' },
+            { name: 'XP Litigation', x: 55, y: 58, color: 'bg-yellow-500 text-yellow-500' },
+            { name: 'Bancos Trad.', x: 80, y: 78, color: 'bg-zinc-500 text-zinc-500' },
+            { name: 'BHG Atual', x: 18, y: 78, color: 'bg-red-400 text-red-400' },
+            { name: 'BHG Alvo', x: 85, y: 12, color: 'bg-[#6856f5] text-[#6856f5]' },
+          ]}
+          xLabel="Escala Operacional →"
+          yLabel="Integração Vertical →" />
 
           <div className="space-y-8">
             <div className="space-y-4">
