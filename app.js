@@ -44,13 +44,23 @@ function renderTab(tabId) {
   if (!contentEl) return;
   const renderFn = renderers[tabId];
   if (!renderFn) return;
-  contentEl.innerHTML = renderFn();
+  try {
+    contentEl.innerHTML = renderFn();
+  } catch (e) {
+    console.error(`Error rendering tab ${tabId}:`, e);
+    contentEl.innerHTML = `<div class="section" style="text-align:center; padding: 40px; color: var(--red)">
+      <h3>Erro ao carregar conteúdo</h3>
+      <p>${e.message}</p>
+    </div>`;
+  }
 }
 
 function init() {
+  console.log('Initializing BHG Presentation...');
   const currentTab = getTabFromHash();
   tabIds.forEach(id => renderTab(id));
   switchTab(currentTab);
+  console.log('Initialization complete. Current tab:', currentTab);
 
   window.addEventListener('hashchange', () => {
     const tab = getTabFromHash();
