@@ -1,6 +1,67 @@
 import { data } from './data.js';
 
+export function renderConclusaoTab() {
+  const d = data.conclusao;
+  return `
+    <section class="section hero-section">
+      <div class="section-label centered">Síntese Final</div>
+      <h1 class="hero-title">${d.headline}</h1>
+      <p class="hero-subtitle">${d.subheadline}</p>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Contexto Competitivo</div>
+        <h2 class="section-title">${d.marketInflection.title}</h2>
+        <p class="section-desc">${d.marketInflection.description}</p>
+      </div>
+      <div class="grid-4">
+        ${d.marketInflection.pillars.map(p => `
+          <div class="card card-bordered p-8">
+            <h3 class="subsection-title" style="font-size: 1.1rem; margin-bottom: 16px; color: var(--purple)">${p.title}</h3>
+            <ul class="trigger-details">
+              ${p.items.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section pb-24">
+      <div class="section-header centered">
+        <div class="section-label centered">Veredito Estratégico</div>
+        <h2 class="section-title">${d.recommendation.title}</h2>
+      </div>
+      <div class="max-w-5xl mx-auto">
+        <div class="card card-elevated p-8" style="border-left: 4px solid var(--red); background: rgba(239,68,68,0.03)">
+          <p class="card-text" style="color: var(--red); font-weight: 600; font-size: 1.1rem; margin-bottom: 24px">
+            ⚠️ ${d.recommendation.warning}
+          </p>
+          <div class="flex flex-col gap-4">
+            <h3 class="subsection-title" style="color: var(--emerald)">${d.recommendation.strategy}</h3>
+            <p class="card-text">${d.recommendation.details}</p>
+          </div>
+        </div>
+        <div class="grid-3 mt-8">
+          ${d.recommendation.points.map(p => `
+            <div class="card card-bordered p-8">
+              <h4 class="metric-label bold" style="margin-bottom: 8px">${p.label}</h4>
+              <p class="card-text">${p.text}</p>
+            </div>
+          `).join('')}
+        </div>
+        <div class="conclusion-box mt-8" style="background: var(--purple); color: white; border: none">
+          <h3 class="conclusion-title" style="color: white">${d.recommendation.conclusion}</h3>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 export function renderContextoTab() {
+
   const d = data.contexto;
   return `
     <section class="section hero-section">

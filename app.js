@@ -5,9 +5,10 @@ import {
   renderDiagnosticoTab,
   renderTeseTab,
   renderModelosTab,
+  renderConclusaoTab,
 } from './components.js';
 
-const tabIds = ['contexto', 'segmentos', 'posicionamento', 'diagnostico', 'tese', 'modelos'];
+const tabIds = ['contexto', 'segmentos', 'posicionamento', 'diagnostico', 'tese', 'modelos', 'conclusao'];
 
 const renderers = {
   contexto: renderContextoTab,
@@ -16,6 +17,7 @@ const renderers = {
   diagnostico: renderDiagnosticoTab,
   tese: renderTeseTab,
   modelos: renderModelosTab,
+  conclusao: renderConclusaoTab,
 };
 
 function getTabFromHash() {
