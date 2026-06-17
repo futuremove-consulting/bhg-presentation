@@ -4,14 +4,14 @@
 
 | Service | Purpose | Status |
 |---------|---------|--------|
-| Vercel | Static hosting & deployment | Planned |
 | GitHub | Source control | Active |
+| Static host (TBD) | Static hosting & deployment | Planned |
 
 ## Deployment Matrix
 
 | Environment | URL | Branch | Notes |
 |-------------|-----|--------|-------|
-| Production | TBD | `main` | Vercel auto-deploy |
+| Production | TBD | `main` | Auto-deploy from GitHub |
 
 ## Environment Variables
 
@@ -21,7 +21,6 @@
 
 ## Build Configuration
 
-- Framework: Next.js 15 (App Router)
-- Output: Static export (`output: 'export'`)
-- Package manager: pnpm
-- Node: managed via nvm
+- Stack: Vanilla HTML/CSS/JS (no framework)
+- Package manager: None required (no build step)
+- Deploy: Upload `index.html`, `*.js`, `*.css` to any static host

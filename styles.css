@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'DM Serif Display', serif; font-weight: 400; }
+h1 { font-weight: 400; }
+h2 { font-weight: 400; }
+h3 { font-weight: 400; }
+h4 { font-weight: 400; }
 
 :root {
   --bg: #0a0a0a;
@@ -28,7 +36,7 @@ html { font-size: 16px; -webkit-font-smoothing: antialiased; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -243,6 +251,12 @@ ul { list-style: none; }
   position: relative;
 }
 .swot-item::before { content: '–'; position: absolute; left: 0; color: var(--text-dim); }
+.swot-item-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.swot-leverage { display: block; font-size: 11px; color: var(--text-muted); font-style: italic; margin-top: 2px; padding-left: 12px; }
+.priority-badge { font-size: 8px; font-weight: 700; letter-spacing: 1px; padding: 2px 6px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+.priority-critica { background: rgba(239,68,68,0.15); color: var(--red); }
+.priority-importante { background: rgba(245,158,11,0.15); color: var(--amber); }
+.priority-media { background: rgba(107,114,128,0.15); color: var(--text-muted); }
 
 /* Player Cards */
 .player-cards { display: flex; flex-direction: column; gap: 16px; }
@@ -302,6 +316,7 @@ ul { list-style: none; }
 .badge-critical { color: var(--red); }
 .badge-warning { color: var(--amber); }
 .badge-ok { color: var(--emerald); }
+.badge-gap { font-size: 9px; color: var(--red); font-weight: 600; letter-spacing: 0.5px; }
 
 /* Model Card */
 .model-card { padding: 40px; display: flex; flex-direction: column; }

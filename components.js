@@ -183,7 +183,7 @@ export function renderDiagnosticoTab() {
                   <td class="cell-value">${dim.value}</td>
                   <td class="cell-value">${dim.status === 'exists' ? 'Mantido' : 'Expandido'}</td>
                   <td>
-                    ${dim.status === 'critical' ? '<span class="badge badge-critical">CRÍTICO</span>'
+                    ${dim.status === 'critical' ? `<span class="badge badge-critical">CRÍTICO</span>${dim.gap ? `<br><span class="badge-gap">${dim.gap}</span>` : ''}`
                     : dim.status === 'missing' ? '<span class="badge badge-warning">NECESSÁRIO</span>'
                     : '<span class="badge badge-ok">OK</span>'}
                   </td>
@@ -375,17 +375,34 @@ function renderSWOT(swot) {
   ];
   return `
     <div class="swot-grid">
-      ${quadrants.map(q => `
-        <div class="swot-quadrant ${q.border}">
-          <div class="swot-header">
-            <span class="swot-icon swot-${q.key}"></span>
-            <span class="swot-label">${q.label}</span>
-          </div>
-          <ul class="swot-list">
-            ${q.items.map(item => `<li class="swot-item">${item}</li>`).join('')}
-          </ul>
-        </div>
-      `).join('')}
+      ${quadrants.map(q => {
+        const itemsHtml = q.items.map(item => {
+          if (typeof item === 'string') {
+            return `<li class="swot-item"><div class="swot-item-header"><span>${item}</span></div></li>`;
+          }
+          const badge = item.priority === 'critica'
+            ? '<span class="priority-badge priority-critica">CRÍTICA</span>'
+            : item.priority === 'importante'
+            ? '<span class="priority-badge priority-importante">IMPORTANTE</span>'
+            : '<span class="priority-badge priority-media">MÉDIA</span>';
+          return `
+            <li class="swot-item">
+              <div class="swot-item-header">
+                <span>${item.text}</span>
+                ${badge}
+              </div>
+              ${item.leverage ? `<span class="swot-leverage">${item.leverage}</span>` : ''}
+            </li>`;
+        }).join('');
+        return `
+          <div class="swot-quadrant ${q.border}">
+            <div class="swot-header">
+              <span class="swot-icon swot-${q.key}"></span>
+              <span class="swot-label">${q.label}</span>
+            </div>
+            <ul class="swot-list">${itemsHtml}</ul>
+          </div>`;
+      }).join('')}
     </div>
   `;
 }
