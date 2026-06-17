@@ -538,13 +538,14 @@ function renderGrowthChart(items) {
       <rect x="${x}" y="${y}" width="${barWidth}" height="${h}" rx="4" fill="#6856f5" opacity="0.9">
         <title>${label}: ${item.growth}</title>
       </rect>
-      <text x="${x + barWidth / 2}" y="${chartH - padB + 15}" text-anchor="middle" fill="#9ca3af" font-size="11" transform="rotate(-20, ${x + barWidth / 2}, ${chartH - padB + 15})">${label}</text>
+      <text x="${x + barWidth / 2}" y="${chartH - padB + 20}" text-anchor="middle" fill="#9ca3af" font-size="12" transform="rotate(-20, ${x + barWidth / 2}, ${chartH - padB + 20})">${label}</text>
     `;
   }).join('');
-
+  
   const labels = items.map((item, i) => {
+    const h = yScale(item.growth);
     const x = padL + (i * (plotW / items.length)) + ((plotW / items.length) - barWidth) / 2 + barWidth / 2;
-    return `<text x="${x}" y="${chartH - padB - 5}" text-anchor="middle" fill="#9ca3af" font-size="10">${item.growth}</text>`;
+    return `<text x="${x}" y="${chartH - padB - h - 8}" text-anchor="middle" fill="#9ca3af" font-size="12">${item.growth}</text>`;
   }).join('');
 
   return `
