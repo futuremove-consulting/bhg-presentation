@@ -366,59 +366,61 @@ ul { list-style: none; }
 .conclusion-text { color: var(--text-secondary); font-size: 14px; }
 
 /* Matrix */
-.matrix-wrapper { max-width: 100%; }
+.matrix-wrapper { max-width: 720px; margin: 0 auto; }
 .matrix-container {
   position: relative;
   background: rgba(17,17,17,0.3);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 32px;
+  padding: 24px;
   overflow: hidden;
 }
 .matrix-svg-wrapper { position: relative; width: 100%; aspect-ratio: 1; }
 .matrix-svg { width: 100%; height: 100%; display: block; }
 .matrix-dot { cursor: pointer; transition: all 0.2s ease; }
-.matrix-dot:hover { r: 8; filter: drop-shadow(0 0 4px var(--purple-light)); }
+.matrix-dot:hover { r: 6; filter: drop-shadow(0 0 6px var(--purple-light)); }
 .matrix-labels { position: absolute; inset: 0; pointer-events: none; }
 .matrix-label {
   position: absolute;
-  font-size: 11px;
-  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text);
   white-space: nowrap;
-  transform: translateY(4px);
   pointer-events: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 .matrix-axis-labels {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0 0;
+  padding: 12px 0 0;
 }
 .axis-y {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
 }
 .axis-x {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   margin-left: auto;
 }
 .matrix-corner-labels {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  font-size: 10px;
-  color: var(--text-dim);
-  line-height: 1.4;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  line-height: 1.3;
 }
 .corner { position: absolute; }
-.tl { top: 8px; left: 12px; }
-.tr { top: 8px; right: 12px; text-align: right; }
-.bl { bottom: 8px; left: 12px; }
-.br { bottom: 8px; right: 12px; text-align: right; }
+.tl { top: 10px; left: 14px; }
+.tr { top: 10px; right: 14px; text-align: right; }
+.bl { bottom: 10px; left: 14px; }
+.br { bottom: 10px; right: 14px; text-align: right; }
 
 /* Landscape */
 .landscape-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }

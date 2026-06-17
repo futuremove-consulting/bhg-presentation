@@ -856,13 +856,21 @@ function renderExpandedMatrix() {
 
 function renderMatriz(players, xLabel, yLabel) {
   const dots = players.map(p => {
-    return `<circle cx="${p.x}%" cy="${p.y}%" r="5" fill="${p.color}" stroke="rgba(255,255,255,0.15)" stroke-width="1" class="matrix-dot">
+    return `<circle cx="${p.x}%" cy="${p.y}%" r="3.5" fill="${p.color}" stroke="rgba(255,255,255,0.3)" stroke-width="1" class="matrix-dot">
       <title>${p.name}</title>
     </circle>`;
   }).join('');
   const labels = players.map(p => {
     const xPos = p.x < 50 ? `left:${p.x + 1}%` : `right:${100 - p.x + 1}%`;
-    return `<div class="matrix-label" style="${xPos};top:${p.y + 2}%" data-name="${p.name}">${p.name}</div>`;
+    return `<div class="matrix-label" style="${xPos};top:${p.y + 1.5}%" data-name="${p.name}">${p.name}</div>`;
+  }).join('');
+
+  const gridLines = Array.from({length: 9}, (_, i) => {
+    const pos = (i + 1) * 10;
+    return `
+      <line x1="${pos}" y1="0" x2="${pos}" y2="100" stroke="#1f2937" stroke-width="0.2" stroke-dasharray="1,3"/>
+      <line x1="0" y1="${pos}" x2="100" y2="${pos}" stroke="#1f2937" stroke-width="0.2" stroke-dasharray="1,3"/>
+    `;
   }).join('');
 
   return `
@@ -870,8 +878,9 @@ function renderMatriz(players, xLabel, yLabel) {
       <div class="matrix-container">
         <div class="matrix-svg-wrapper">
           <svg viewBox="0 0 100 100" class="matrix-svg" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="50" x2="100" y2="50" stroke="#374151" stroke-width="0.3" stroke-dasharray="2,2"/>
-            <line x1="50" y1="0" x2="50" y2="100" stroke="#374151" stroke-width="0.3" stroke-dasharray="2,2"/>
+            ${gridLines}
+            <line x1="0" y1="50" x2="100" y2="50" stroke="#374151" stroke-width="0.5"/>
+            <line x1="50" y1="0" x2="50" y2="100" stroke="#374151" stroke-width="0.5"/>
             <rect x="0" y="0" width="50" height="50" fill="none" stroke="#1f2937" stroke-width="0.3" stroke-dasharray="2,2"/>
             <rect x="50" y="0" width="50" height="50" fill="none" stroke="#1f2937" stroke-width="0.3" stroke-dasharray="2,2"/>
             <rect x="0" y="50" width="50" height="50" fill="none" stroke="#1f2937" stroke-width="0.3" stroke-dasharray="2,2"/>
