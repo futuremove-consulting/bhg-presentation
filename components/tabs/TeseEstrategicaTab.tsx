@@ -25,7 +25,7 @@ export function TeseEstrategicaTab() {
       {/* Synergy Section */}
       <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
-          <div className="section-label justify-center">Integração</div>
+          <div className="section-label justify-center">Interseção Estratégica</div>
           <Heading as="h2" size="xl" className="text-white">{data.synergy.title}</Heading>
           <p className="text-gray-400">{data.synergy.description}</p>
         </div>
@@ -38,9 +38,9 @@ export function TeseEstrategicaTab() {
                   <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
                   <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
                 </radialGradient>
-                <radialGradient id="grad-orange" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                  <stop offset="0%" stopColor="#f97316" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="#f97316" stopOpacity="0" />
+                <radialGradient id="grad-purple" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                  <stop offset="0%" stopColor="#6856f5" stopOpacity="0.3" />
+                  <stop offset="100%" stopColor="#6856f5" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient id="grad-emerald" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
                   <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
@@ -50,12 +50,12 @@ export function TeseEstrategicaTab() {
               
               {/* Circles */}
               <circle cx="140" cy="130" r="100" fill="url(#grad-blue)" />
-              <circle cx="260" cy="130" r="100" fill="url(#grad-orange)" />
+              <circle cx="260" cy="130" r="100" fill="url(#grad-purple)" />
               <circle cx="200" cy="200" r="100" fill="url(#grad-emerald)" />
 
               {/* Labels */}
               <text x="80" y="100" className="text-[14px] font-bold fill-blue-400">BANKING</text>
-              <text x="280" y="100" className="text-[14px] font-bold fill-orange-400">TRIBUTÁRIA</text>
+              <text x="280" y="100" className="text-[14px] font-bold fill-purple-400">TRIBUTÁRIA</text>
               <text x="170" y="260" className="text-[14px] font-bold fill-emerald-400">PATRIMÔNIO</text>
               
               <text x="165" y="160" className="text-[12px] font-black fill-white">INTERSEÇÃO</text>
@@ -92,7 +92,7 @@ export function TeseEstrategicaTab() {
       {/* Repositioning Section */}
       <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
-          <div className="section-label justify-center">Reposicionamento</div>
+          <div className="section-label justify-center">Mudança de Modelo</div>
           <Heading as="h2" size="xl" className="text-white">{data.repositioning.title}</Heading>
           <p className="text-gray-400">{data.repositioning.description}</p>
         </div>

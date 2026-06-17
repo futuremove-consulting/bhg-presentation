@@ -51,7 +51,7 @@ export function DiagnosticoBHGTab() {
                       {dim.status === 'critical' ? (
                         <span className="text-red-500 font-bold text-[10px] uppercase tracking-widest">CRÍTICO</span>
                       ) : dim.status === 'missing' ? (
-                        <span className="text-orange-500 font-bold text-[10px] uppercase tracking-widest">NECESSÁRIO</span>
+                        <span className="text-yellow-500 font-bold text-[10px] uppercase tracking-widest">NECESSÁRIO</span>
                       ) : (
                         <span className="text-emerald-500 font-bold text-[10px] uppercase tracking-widest">OK</span>
                       )}
@@ -108,7 +108,7 @@ export function DiagnosticoBHGTab() {
           </Card>
 
           <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="xl" className="text-orange-500">Ameaças Externas</Heading>
+            <Heading as="h3" size="xl" className="text-gray-400">Ameaças Externas</Heading>
             <ul className="space-y-2">
               {data.swot.threats.map((t, i) => (
                 <li key={i} className="text-sm text-gray-300 flex gap-2">

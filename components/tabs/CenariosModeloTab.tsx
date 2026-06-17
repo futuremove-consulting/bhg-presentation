@@ -27,8 +27,9 @@ export function CenariosModeloTab() {
       {/* Models Section */}
       <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
-          <div className="section-label justify-center">Arquétipos</div>
-          <Heading as="h2" size="xl" className="text-white">Três Arquétipos Estratégicos</Heading>
+          <div className="section-label justify-center">Arquétipos Estratégicos</div>
+          <Heading as="h2" size="xl" className="text-white">Três Caminhos, Três Trade-offs</Heading>
+          <p className="text-gray-400">Cada modelo equilibra margem, escala e controle de forma distinta</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -100,6 +101,10 @@ export function CenariosModeloTab() {
 
       {/* Models Comparison Table */}
       <section className="py-12 space-y-12">
+        <div className="text-center space-y-4">
+          <div className="section-label justify-center">Comparativo</div>
+          <Heading as="h2" size="xl" className="text-white">Comparativo Direto dos Modelos</Heading>
+        </div>
         <div className="max-w-6xl mx-auto">
           <ModelsComparison models={data.models} />
         </div>
@@ -109,6 +114,10 @@ export function CenariosModeloTab() {
 
       {/* Valuation Comparison */}
       <section className="py-12 space-y-12">
+        <div className="text-center space-y-4">
+          <div className="section-label justify-center">Valuation</div>
+          <Heading as="h2" size="xl" className="text-white">Projeção de Valuation (5 anos)</Heading>
+        </div>
         <div className="max-w-5xl mx-auto">
           <ValuationComparison models={data.models} />
         </div>

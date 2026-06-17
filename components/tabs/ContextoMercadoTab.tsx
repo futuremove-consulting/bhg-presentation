@@ -48,7 +48,7 @@ export function ContextoMercadoTab() {
       {/* Growth Dynamics Section */}
       <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
-          <div className="section-label justify-center">Crescimento</div>
+          <div className="section-label justify-center">Dinâmica de Crescimento</div>
           <Heading as="h2" size="xl" className="text-white">{data.growthDynamics.title}</Heading>
         </div>
 

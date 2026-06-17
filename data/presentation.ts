@@ -103,8 +103,8 @@ export interface PresentationData {
 
 export const presentationData: PresentationData = {
   contexto: {
-    headline: 'Escala e Crescimento do Mercado de Ativos Judiciais no Brasil',
-    subheadline: 'Convergência de fatores criando uma janela de oportunidade sem precedentes.',
+    headline: 'O Mercado de Ativos Judiciais no Brasil: Escala e Crescimento',
+    subheadline: 'Fatores convergentes criam uma janela de oportunidade sem precedentes.',
     marketSize: {
       title: 'Volume Absoluto e Dinâmica',
       items: [
@@ -117,20 +117,23 @@ export const presentationData: PresentationData = {
     growthDynamics: {
       title: 'Aceleração do Segmento',
       items: [
-        { segment: 'Fintechs de precatórios', growth: '50% a.a.', observation: 'Acelerado; consolidando' },
+        { segment: 'Fintechs de precatórios', growth: '50% a.a.', observation: 'Acelerado; em consolidação' },
         { segment: 'FIDCs de precatórios', growth: '87.8%', observation: 'Explosão regulatória (CVM 175)' },
-        { segment: 'Precato (benchmark)', growth: '~R$ 250M/ano', observation: 'R$ 1,5B intermediado em 6 anos' },
-        { segment: 'Prêambulo Bank', growth: 'R$ 1,2B/ano', observation: 'Crescimento 30-40%' },
+        { segment: 'Precato (benchmark)', growth: 'R$ 250M/ano', observation: 'R$ 1,5B intermediado em 6 anos' },
+        { segment: 'Prêambulo Bank', growth: 'R$ 1,2B/ano', observation: 'Crescimento de 30-40% a.a.' },
+        { segment: 'GCB / PeerBR', growth: 'R$ 3B/ano', observation: 'R$ 3B em crédito; 200K+ clientes' },
+        { segment: 'Tokenização (RWA)', growth: 'R$ 1B+', observation: 'Acura Capital: maior da AL' },
       ],
     },
     competitiveMap: {
       title: 'Posicionamento de Players e Lacunas',
       description: 'Onde os líderes atuais operam e onde reside a oportunidade de integração.',
       players: [
-        { name: 'Precato', core: 'Financeiro', strength: 'Alto (liderança)', gap: 'Sem tributária integrada', risk: 'Alto (consolidação)' },
-        { name: 'Prêambulo', core: 'Advocacia', strength: 'Alto (distribuição)', gap: 'Sem financeira/tributária', risk: 'Médio-Alto' },
-        { name: 'XP Litigation', core: 'Fundos', strength: 'Médio (marca)', gap: 'Sem originação/banco', risk: 'Médio' },
-        { name: 'Bancos Tradicionais', core: 'Corporate', strength: 'Médio (reputação)', gap: 'Sem especialização/velocidade', risk: 'Médio' },
+        { name: 'Precato', core: 'Fintech', strength: 'R$ 1,5B intermediados', gap: 'Sem tributária integrada', risk: 'Consolidação do mercado' },
+        { name: 'Prêambulo Bank', core: 'Banco + SaaS', strength: '1M+ advogados cadastrados', gap: 'Sem financeira/tributária própria', risk: 'Execução multiplataforma' },
+        { name: 'GCB / PeerBR', core: 'Holding Fintech', strength: 'R$ 3B crédito; 200K+ clientes', gap: 'Sem jurídico próprio', risk: 'Complexidade operacional' },
+        { name: 'XP Litigation', core: 'Fundos', strength: 'Distribuição massiva', gap: 'Sem originação própria', risk: 'Dependência de terceiros' },
+        { name: 'Bancos Tradicionais', core: 'Corporate', strength: 'Capital ilimitado', gap: 'Sem especialização setorial', risk: 'Velocidade de inovação' },
       ],
       insight: 'Não há player que controle simultaneamente Banking, Tributação e Advocacia.',
     },

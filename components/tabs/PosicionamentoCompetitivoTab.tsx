@@ -27,8 +27,8 @@ export function PosicionamentoCompetitivoTab() {
       {/* SWOT Section */}
       <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
-          <div className="section-label justify-center">Forças Estruturais</div>
-          <Heading as="h2" size="xl" className="text-white">{data.swot.title || 'Dinâmica Setorial'}</Heading>
+          <div className="section-label justify-center">Análise SWOT</div>
+          <Heading as="h2" size="xl" className="text-white">{data.swot.title}</Heading>
         </div>
 
         <div className="max-w-5xl mx-auto">
@@ -60,8 +60,9 @@ export function PosicionamentoCompetitivoTab() {
       {/* Competitive Landscape Section */}
       <section className="py-12 space-y-12 pb-24">
         <div className="text-center space-y-4">
-          <div className="section-label justify-center">Panorama</div>
-          <Heading as="h2" size="xl" className="text-white">Panorama Competitivo</Heading>
+          <div className="section-label justify-center">Panorama Competitivo</div>
+          <Heading as="h2" size="xl" className="text-white">Distribuição de Players por Quadrante</Heading>
+          <p className="text-gray-400">16 players mapeados por integração vertical e escala operacional</p>
         </div>
 
         <div className="max-w-7xl mx-auto">
