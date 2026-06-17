@@ -150,7 +150,7 @@ export function TeseEstrategicaTab() {
                 </div>
               </Card>
               {idx < data.valueChain.stages.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10 text-gray-700">
+                <div className="hidden md:block absolute top-1/2 right-0 translate-x-1/2 z-10 text-gray-700">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

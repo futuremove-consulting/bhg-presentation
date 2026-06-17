@@ -20,7 +20,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
       </head>
-      <body className="min-h-screen bg-black text-white">
+      <body className="min-h-screen bg-black text-white overflow-x-hidden">
         <Header />
         <TabNavigation />
         <main className="pt-20 pb-16 px-4 md:px-8 lg:px-16">
