@@ -1,5 +1,0 @@
-onlyBuiltDependencies:
-  - esbuild
-  - workerd
-patchedDependencies:
-  '@futuremove/ui': patches/@futuremove__ui.patch

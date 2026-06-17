@@ -13,22 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 11
-          cache: true
-          cache-dependency-path: pnpm-lock.yaml
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: 27e215ca5f17251cca02e84b842d9e9b
-          command: pages deploy out/ --project-name bhg-presentation --branch master
+          command: pages deploy . --project-name bhg-presentation --branch master

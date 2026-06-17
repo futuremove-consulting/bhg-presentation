@@ -1,110 +1,7 @@
-export type TabId = 'contexto' | 'posicionamento' | 'diagnostico' | 'tese' | 'modelos';
-
-export interface PresentationData {
+export const data = {
   contexto: {
-    headline: string;
-    subheadline: string;
-    marketSize: {
-      title: string;
-      items: { label: string; value: string; context: string }[];
-    };
-    growthDynamics: {
-      title: string;
-      items: { segment: string; growth: string; observation: string }[];
-    };
-    competitiveMap: {
-      title: string;
-      description: string;
-      players: { name: string; core: string; strength: string; gap: string; risk: string }[];
-      insight: string;
-    };
-    triggers: {
-      title: string;
-      description: string;
-      items: { title: string; implication: string; details: string[] }[];
-      window: string;
-    };
-  };
-  posicionamento: {
-    headline: string;
-    subheadline: string;
-    swot: {
-      title: string;
-      strengths: string[];
-      weaknesses: string[];
-      opportunities: string[];
-      threats: string[];
-    };
-    gaps: {
-      title: string;
-      items: { title: string; description: string }[];
-    };
-  };
-  diagnostico: {
-    headline: string;
-    subheadline: string;
-    matrix: {
-      title: string;
-      description: string;
-      dimensions: { label: string; value: string; status: 'exists' | 'missing' | 'critical' }[];
-    };
-    swot: {
-      title: string;
-      strengths: string[];
-      weaknesses: string[];
-      opportunities: string[];
-      threats: string[];
-    };
-  };
-  tese: {
-    headline: string;
-    subheadline: string;
-    synergy: {
-      title: string;
-      description: string;
-      elements: { label: string; color: string }[];
-      intersection: { label: string; description: string };
-      example: { title: string; steps: string[] };
-    };
-    repositioning: {
-      title: string;
-      description: string;
-      from: string;
-      to: string;
-      valueProp: string;
-    };
-    valueChain: {
-      title: string;
-      description: string;
-      stages: { label: string; input: string; revenue1: string; revenue2: string; revenue3: string }[];
-    };
-  };
-  modelos: {
-    headline: string;
-    subheadline: string;
-    models: {
-      id: string;
-      name: string;
-      subtitle: string;
-      focus: string;
-      ticket: string;
-      volume: string;
-      revenue: string;
-      margin: string;
-      cac: string;
-      valuation: string;
-      risk: string;
-      whenToChoose: { type: 'pros' | 'cons', text: string }[];
-      description: string;
-    }[];
-    conclusion: string;
-  };
-}
-
-export const presentationData: PresentationData = {
-  contexto: {
-    headline: 'O Mercado de Ativos Judiciais no Brasil: Escala e Crescimento',
-    subheadline: 'Fatores convergentes criam uma janela de oportunidade sem precedentes.',
+    headline: 'Escala e Crescimento do Mercado de Ativos Judiciais no Brasil',
+    subheadline: 'Convergência de fatores criando uma janela de oportunidade sem precedentes.',
     marketSize: {
       title: 'Volume Absoluto e Dinâmica',
       items: [
@@ -117,23 +14,23 @@ export const presentationData: PresentationData = {
     growthDynamics: {
       title: 'Aceleração do Segmento',
       items: [
-        { segment: 'Fintechs de precatórios', growth: '50% a.a.', observation: 'Acelerado; em consolidação' },
+        { segment: 'Fintechs de precatórios', growth: '50% a.a.', observation: 'Acelerado; consolidando' },
         { segment: 'FIDCs de precatórios', growth: '87.8%', observation: 'Explosão regulatória (CVM 175)' },
-        { segment: 'Precato (benchmark)', growth: 'R$ 250M/ano', observation: 'R$ 1,5B intermediado em 6 anos' },
-        { segment: 'Prêambulo Bank', growth: 'R$ 1,2B/ano', observation: 'Crescimento de 30-40% a.a.' },
-        { segment: 'GCB / PeerBR', growth: 'R$ 3B/ano', observation: 'R$ 3B em crédito; 200K+ clientes' },
-        { segment: 'Tokenização (RWA)', growth: 'R$ 1B+', observation: 'Acura Capital: maior da AL' },
+        { segment: 'Precato (benchmark)', growth: '~R$ 250M/ano', observation: 'R$ 1,5B intermediado em 6 anos' },
+        { segment: 'Prêambulo Bank', growth: 'R$ 1,2B/ano', observation: 'Crescimento 30-40%' },
+        { segment: 'GCB / PeerBR', growth: 'R$ 3B crédito', observation: '200K+ clientes' },
+        { segment: 'Tokenização / RWA', growth: 'R$ 1B+', observation: 'Acura Capital (Hathor)' },
       ],
     },
     competitiveMap: {
       title: 'Posicionamento de Players e Lacunas',
       description: 'Onde os líderes atuais operam e onde reside a oportunidade de integração.',
       players: [
-        { name: 'Precato', core: 'Fintech', strength: 'R$ 1,5B intermediados', gap: 'Sem tributária integrada', risk: 'Consolidação do mercado' },
-        { name: 'Prêambulo Bank', core: 'Banco + SaaS', strength: '1M+ advogados cadastrados', gap: 'Sem financeira/tributária própria', risk: 'Execução multiplataforma' },
-        { name: 'GCB / PeerBR', core: 'Holding Fintech', strength: 'R$ 3B crédito; 200K+ clientes', gap: 'Sem jurídico próprio', risk: 'Complexidade operacional' },
-        { name: 'XP Litigation', core: 'Fundos', strength: 'Distribuição massiva', gap: 'Sem originação própria', risk: 'Dependência de terceiros' },
-        { name: 'Bancos Tradicionais', core: 'Corporate', strength: 'Capital ilimitado', gap: 'Sem especialização setorial', risk: 'Velocidade de inovação' },
+        { name: 'Precato', core: 'Financeiro', strength: 'Alto (liderança R$1,5B)', gap: 'Sem tributária integrada', risk: 'Alto (consolidação)' },
+        { name: 'Prêambulo Bank', core: 'Advocacia', strength: 'Alto (1M+ advogados)', gap: 'Sem financeira/tributária', risk: 'Médio-Alto' },
+        { name: 'XP Litigation', core: 'Fundos', strength: 'Médio (marca)', gap: 'Sem originação/banco', risk: 'Médio' },
+        { name: 'Bancos Tradicionais', core: 'Corporate', strength: 'Médio (reputação)', gap: 'Sem especialização/velocidade', risk: 'Médio' },
+        { name: 'GCB / PeerBR', core: 'Holding Fintech', strength: 'Alto (R$3B crédito)', gap: 'Sem jurídico próprio', risk: 'Médio-Alto' },
       ],
       insight: 'Não há player que controle simultaneamente Banking, Tributação e Advocacia.',
     },
@@ -211,7 +108,7 @@ export const presentationData: PresentationData = {
       description: 'A convergência de dimensões para otimização de capital.',
       elements: [
         { label: 'Banking', color: 'blue' },
-        { label: 'Tributária', color: 'orange' },
+        { label: 'Tributária', color: 'purple' },
         { label: 'Patrimônio', color: 'emerald' },
       ],
       intersection: {
@@ -222,7 +119,7 @@ export const presentationData: PresentationData = {
         title: 'Exemplo de Orquestração',
         steps: [
           'Ativo: Precatório R$ 1M + Débito Tributário R$ 1M',
-          'Solução Integrada: Crédito (70% LTV) + Compensação $\\rightarrow$ +R$ 200k de ganho',
+          'Solução Integrada: Crédito (70% LTV) + Compensação → +R$ 200k de ganho',
         ],
       },
     },
