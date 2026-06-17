@@ -3,18 +3,16 @@
 import { presentationData } from '@/data/presentation';
 import { Heading } from '@futuremove/ui';
 import { Card } from '@futuremove/ui';
-import { Grid } from '@futuremove/ui';
-import { Stack } from '@futuremove/ui';
-import { Flex } from '@futuremove/ui';
 
 export function ContextoMercadoTab() {
   const data = presentationData.contexto;
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Hero Section */}
-      <section className="py-12 text-center">
-        <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
+      <section className="py-24 text-center">
+        <div className="section-label justify-center">Panorama Geral</div>
+        <Heading as="h1" size="2xl" className="mb-6 text-balance text-white max-w-5xl mx-auto">
           {data.headline}
         </Heading>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -22,18 +20,21 @@ export function ContextoMercadoTab() {
         </p>
       </section>
 
+      <div className="section-divider" />
+
       {/* Market Size Section */}
-      <section className="space-y-12">
+      <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Indicadores</div>
           <Heading as="h2" size="xl" className="text-white">{data.marketSize.title}</Heading>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {data.marketSize.items.map((item, idx) => (
-            <Card key={idx} variant="bordered" className="p-6">
-              <div className="space-y-2">
+            <Card key={idx} variant="bordered" className="p-8">
+              <div className="space-y-3">
                 <span className="text-xs text-gray-500 uppercase tracking-wider">{item.label}</span>
-                <Heading as="h3" size="md" className="text-white">{item.value}</Heading>
+                <Heading as="h3" size="2xl" className="text-white">{item.value}</Heading>
                 <p className="text-xs text-gray-400 italic">{item.context}</p>
               </div>
             </Card>
@@ -41,9 +42,12 @@ export function ContextoMercadoTab() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* Growth Dynamics Section */}
-      <section className="space-y-12">
+      <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Crescimento</div>
           <Heading as="h2" size="xl" className="text-white">{data.growthDynamics.title}</Heading>
         </div>
 
@@ -71,15 +75,17 @@ export function ContextoMercadoTab() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* Competitive Map Section */}
-      <section className="space-y-12">
+      <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Competição</div>
           <Heading as="h2" size="xl" className="text-white">{data.competitiveMap.title}</Heading>
           <p className="text-gray-400">{data.competitiveMap.description}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-start">
-          {/* Visual Placeholder for Matrix */}
           <div className="aspect-square bg-gray-900/30 rounded-3xl border border-gray-800 flex items-center justify-center relative overflow-hidden">
              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 opacity-10">
                 <div className="border-r border-b border-gray-700" />
@@ -101,7 +107,7 @@ export function ContextoMercadoTab() {
 
           <div className="space-y-8">
             <div className="space-y-4">
-              <Heading as="h3" size="md" className="text-white">Insights de Posicionamento</Heading>
+              <Heading as="h3" size="2xl" className="text-white">Insights de Posicionamento</Heading>
               <p className="text-gray-300 leading-relaxed">
                 {data.competitiveMap.insight}
               </p>
@@ -109,7 +115,7 @@ export function ContextoMercadoTab() {
 
             <div className="grid grid-cols-1 gap-4">
               {data.competitiveMap.players.map((player, idx) => (
-                <Card key={idx} variant="bordered" className="p-4 space-y-2">
+                <Card key={idx} variant="bordered" className="p-5 space-y-2">
                   <div className="flex justify-between items-center">
                     <span className="text-white font-bold">{player.name}</span>
                     <span className="text-[10px] bg-gray-800 px-2 py-0.5 rounded text-gray-400 uppercase tracking-wider">{player.core}</span>
@@ -126,9 +132,12 @@ export function ContextoMercadoTab() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* Triggers Section */}
-      <section className="space-y-12 pb-24">
+      <section className="py-12 space-y-12 pb-24">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Janela de Oportunidade</div>
           <Heading as="h2" size="xl" className="text-white">{data.triggers.title}</Heading>
           <p className="text-gray-400">{data.triggers.description}</p>
         </div>
@@ -137,13 +146,13 @@ export function ContextoMercadoTab() {
           {data.triggers.items.map((trigger, idx) => (
             <Card key={idx} variant="bordered" className="p-8 space-y-6">
               <div className="space-y-2">
-                <Heading as="h3" size="md" className="text-white">{trigger.title}</Heading>
+                <Heading as="h3" size="xl" className="text-white">{trigger.title}</Heading>
                 <p className="text-xs text-gray-400 italic">{trigger.implication}</p>
               </div>
               <div className="space-y-3">
                 {trigger.details.map((detail, dIdx) => (
                   <div key={dIdx} className="flex gap-2 text-sm text-gray-300">
-                    <span className="text-gray-500">•</span>
+                    <span className="text-gray-500">&bull;</span>
                     <span>{detail}</span>
                   </div>
                 ))}
@@ -153,8 +162,8 @@ export function ContextoMercadoTab() {
         </div>
 
         <div className="max-w-2xl mx-auto text-center">
-          <div className="p-6 rounded-2xl bg-gray-900 border border-gray-800">
-            <Heading as="h4" size="sm" className="text-white mb-2">Janela de Oportunidade</Heading>
+          <div className="p-8 rounded-2xl bg-gray-900 border border-gray-800">
+            <Heading as="h4" size="lg" className="text-white mb-3">Janela de Oportunidade</Heading>
             <p className="text-lg text-white font-medium">{data.triggers.window}</p>
           </div>
         </div>

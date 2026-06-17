@@ -3,16 +3,16 @@
 import { presentationData } from '@/data/presentation';
 import { Heading } from '@futuremove/ui';
 import { Card } from '@futuremove/ui';
-import { Grid } from '@futuremove/ui';
 
 export function TeseEstrategicaTab() {
   const data = presentationData.tese;
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Hero Section */}
-      <section className="py-12 text-center">
-        <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
+      <section className="py-24 text-center">
+        <div className="section-label justify-center">Tese</div>
+        <Heading as="h1" size="2xl" className="mb-6 text-balance text-white max-w-5xl mx-auto">
           {data.headline}
         </Heading>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -20,9 +20,12 @@ export function TeseEstrategicaTab() {
         </p>
       </section>
 
+      <div className="section-divider" />
+
       {/* Synergy Section */}
-      <section className="space-y-12">
+      <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Integração</div>
           <Heading as="h2" size="xl" className="text-white">{data.synergy.title}</Heading>
           <p className="text-gray-400">{data.synergy.description}</p>
         </div>
@@ -60,16 +63,16 @@ export function TeseEstrategicaTab() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
-            <Card variant="bordered" className="p-6">
-              <Heading as="h4" size="sm" className="text-white mb-4">
+            <Card variant="bordered" className="p-8">
+              <Heading as="h4" size="lg" className="text-white mb-4">
                 {data.synergy.intersection.label}
               </Heading>
               <p className="text-gray-300 text-sm leading-relaxed">
                 {data.synergy.intersection.description}
               </p>
             </Card>
-            <Card variant="bordered" className="p-6">
-              <Heading as="h4" size="sm" className="text-blue-400 mb-4">
+            <Card variant="bordered" className="p-8">
+              <Heading as="h4" size="lg" className="text-blue-400 mb-4">
                 Exemplo de Orquestração
               </Heading>
               <div className="space-y-3">
@@ -84,9 +87,12 @@ export function TeseEstrategicaTab() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* Repositioning Section */}
-      <section className="space-y-12 py-12 border-y border-gray-900">
+      <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Reposicionamento</div>
           <Heading as="h2" size="xl" className="text-white">{data.repositioning.title}</Heading>
           <p className="text-gray-400">{data.repositioning.description}</p>
         </div>
@@ -95,7 +101,7 @@ export function TeseEstrategicaTab() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 text-center">
             <div className="space-y-2">
               <span className="text-xs text-gray-500 uppercase tracking-widest">DE</span>
-              <Heading as="h3" size="md" className="text-gray-500 line-through">{data.repositioning.from}</Heading>
+              <Heading as="h3" size="xl" className="text-gray-500 line-through">{data.repositioning.from}</Heading>
             </div>
             <div className="text-gray-600">
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,29 +110,32 @@ export function TeseEstrategicaTab() {
             </div>
             <div className="space-y-2">
               <span className="text-xs text-gray-300 uppercase tracking-widest font-bold">PARA</span>
-              <Heading as="h3" size="lg" className="text-white">{data.repositioning.to}</Heading>
+              <Heading as="h3" size="2xl" className="text-white">{data.repositioning.to}</Heading>
             </div>
           </div>
           <p className="max-w-2xl text-center text-gray-400 italic">
-            "{data.repositioning.valueProp}"
+            &ldquo;{data.repositioning.valueProp}&rdquo;
           </p>
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* Value Chain Section */}
-      <section className="space-y-12 pb-12">
+      <section className="py-12 space-y-12 pb-24">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Jornada</div>
           <Heading as="h2" size="xl" className="text-white">{data.valueChain.title}</Heading>
           <p className="text-gray-400">{data.valueChain.description}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {data.valueChain.stages.map((stage, idx) => (
             <div key={idx} className="relative">
               <Card variant="elevated" className="h-full flex flex-col">
                 <div className="mb-6">
                   <span className="text-xs font-bold text-gray-400 uppercase">Etapa {idx + 1}</span>
-                  <Heading as="h4" size="sm" className="mt-1 text-white">{stage.label}</Heading>
+                  <Heading as="h4" size="lg" className="mt-1 text-white">{stage.label}</Heading>
                 </div>
                 
                 <div className="space-y-4 flex-grow">

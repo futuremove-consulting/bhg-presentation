@@ -8,8 +8,6 @@ const tabs = [
   { id: 'diagnostico', label: 'DIAGNÓSTICO BHG' },
   { id: 'tese', label: 'TESE ESTRATÉGICA' },
   { id: 'modelos', label: 'CENÁRIOS DE MODELO' },
-  { id: 'vantagens', label: 'VANTAGENS SUSTENTÁVEIS' },
-  { id: 'valor', label: 'REALIZAÇÃO DE VALOR' },
 ];
 
 function getTabFromHash(): string {
@@ -48,13 +46,16 @@ export function TabNavigation() {
             <button
               key={tab.id}
               onClick={() => handleClick(tab.id)}
-              className={`whitespace-nowrap px-4 py-2 text-xs md:text-sm font-bold transition-all duration-200 rounded-lg ${
+              className={`relative whitespace-nowrap px-4 py-2 text-xs md:text-sm font-bold transition-all duration-200 rounded-lg ${
                 activeTab === tab.id
                   ? 'text-white bg-white/10 border border-white/20'
                   : 'text-gray-500 hover:text-gray-300 hover:bg-gray-900/50'
               }`}
             >
               {tab.label}
+              {activeTab === tab.id && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-white/85 rounded-full" />
+              )}
             </button>
           ))}
         </div>

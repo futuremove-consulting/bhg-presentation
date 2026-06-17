@@ -3,16 +3,16 @@
 import { presentationData } from '@/data/presentation';
 import { Heading } from '@futuremove/ui';
 import { Card } from '@futuremove/ui';
-import { Grid } from '@futuremove/ui';
 
 export function CenariosModeloTab() {
   const data = presentationData.modelos;
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Hero Section */}
-      <section className="py-12 text-center">
-        <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
+      <section className="py-24 text-center">
+        <div className="section-label justify-center">Cenários</div>
+        <Heading as="h1" size="2xl" className="mb-6 text-balance text-white max-w-4xl mx-auto">
           {data.headline}
         </Heading>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -20,13 +20,15 @@ export function CenariosModeloTab() {
         </p>
       </section>
 
+      <div className="section-divider" />
+
       {/* Models Section */}
-      <section className="space-y-12">
-        <Grid className="grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+      <section className="py-12 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {data.models.map((model) => (
-            <Card key={model.id} variant="elevated" className="flex flex-col h-full p-8">
+            <Card key={model.id} variant="elevated" className="flex flex-col h-full p-10">
               <div className="space-y-4 mb-8">
-                <Heading as="h3" size="md" className="text-white">
+                <Heading as="h3" size="2xl" className="text-white">
                   {model.name}
                 </Heading>
                 <p className="text-sm text-gray-400 min-h-[3rem] leading-relaxed">
@@ -75,24 +77,24 @@ export function CenariosModeloTab() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-gray-800">
-                <Heading as="h4" size="sm" className="text-white mb-2">Quando escolher:</Heading>
+                <Heading as="h4" size="md" className="text-white mb-2">Quando escolher:</Heading>
                 <div className="space-y-2">
                   {model.whenToChoose.map((item, idx) => (
                     <p key={idx} className={`text-xs leading-relaxed ${item.type === 'cons' ? 'text-red-400' : 'text-gray-400'}`}>
-                      {item.type === 'pros' ? '✓ ' : '✗ '} {item.text}
+                      {item.type === 'pros' ? '&#10003; ' : '&#10007; '} {item.text}
                     </p>
                   ))}
                 </div>
               </div>
             </Card>
           ))}
-        </Grid>
+        </div>
       </section>
 
       {/* Conclusion Section */}
       <section className="max-w-3xl mx-auto text-center pb-24">
-        <div className="p-8 rounded-2xl bg-gray-900/50 border border-gray-800">
-          <Heading as="h3" size="lg" className="mb-4 text-white">
+        <div className="p-10 rounded-2xl bg-gray-900/50 border border-gray-800">
+          <Heading as="h3" size="2xl" className="mb-4 text-white">
             {data.conclusion}
           </Heading>
           <p className="text-gray-400 text-sm">

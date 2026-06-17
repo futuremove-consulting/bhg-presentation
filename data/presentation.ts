@@ -1,4 +1,4 @@
-export type TabId = 'contexto' | 'posicionamento' | 'diagnostico' | 'tese' | 'modelos' | 'vantagens' | 'valor';
+export type TabId = 'contexto' | 'posicionamento' | 'diagnostico' | 'tese' | 'modelos';
 
 export interface PresentationData {
   contexto: {
@@ -98,39 +98,6 @@ export interface PresentationData {
       description: string;
     }[];
     conclusion: string;
-  };
-  vantagens: {
-    headline: string;
-    subheadline: string;
-    moats: {
-      id: string;
-      title: string;
-      what: string;
-      whyMoat: string;
-      defense: string;
-      description: string;
-      level: 'low' | 'medium' | 'high' | 'very-high';
-    }[];
-    synergy: string;
-  };
-  valor: {
-    headline: string;
-    subheadline: string;
-    tam: {
-      value: string;
-      label: string;
-      description: string;
-    };
-    multiples: {
-      category: string;
-      multiplier: string;
-      example: string;
-    }[];
-    conclusion: {
-      title: string;
-      body: string[];
-      cta: string;
-    };
   };
 }
 
@@ -337,91 +304,5 @@ export const presentationData: PresentationData = {
       },
     ],
     conclusion: 'A escolha deve alinhar sua tolerância ao risco com sua visão de longo prazo.',
-  },
-  vantagens: {
-    headline: 'Vantagens Competitivas Sustentáveis',
-    subheadline: 'Barreiras defensáveis que impedem a replicação rápida.',
-    moats: [
-      {
-        id: 'ai',
-        title: 'Propriedade Intelectual: IA de Precificação',
-        what: 'Algoritmo de precificação dinâmica baseado em 40+ variáveis.',
-        whyMoat: 'Novo entrante levaria 2-3 anos para acumular dados competitivos.',
-        defense: 'Propriedade Intelectual + Vantagem de Tempo.',
-        description: 'Aumento de precisão e conversão via Data Flywheel.',
-        level: 'high',
-      },
-      {
-        id: 'origination',
-        title: 'Relações de Distribuição: Rede de Advogados',
-        what: 'Base de parceiros com preferência de acesso ao pipeline.',
-        whyMoat: 'A originação é o gargalo; quem controla o acesso controla a escala.',
-        defense: 'Relacionamento + Reputação + Volume.',
-        description: 'Controle de 30-50% do pipeline de mercado.',
-        level: 'high',
-      },
-      {
-        id: 'compliance',
-        title: 'Reputação Institucional: Segurança Jurídica',
-        what: 'Diferencial baseado na expertise do CEO e rigor regulatório.',
-        whyMoat: 'Investidores e grandes parceiros só alocam capital em marcas de confiança.',
-        defense: 'Expertise do CEO + Histórico de Compliance.',
-        description: 'Transformando conformidade em vantagem competitiva.',
-        level: 'medium',
-      },
-      {
-        id: 'flywheel',
-        title: 'Efeito de Rede Operacional: Loop Infinito',
-        what: 'Dinâmica cumulativa de Volume $\\rightarrow$ Dados $\\rightarrow$ Precisão.',
-        whyMoat: 'A vantagem de quem inicia o ciclo é quase irreversível.',
-        defense: 'Escala de Dados + Inteligência Preditiva.',
-        description: 'O gap de competidores aumenta a cada transação.',
-        level: 'very-high',
-      },
-      {
-        id: 'lockin',
-        title: 'Retenção Estrutural: Múltiplos Pontos de Contato',
-        what: 'Lock-in via ecossistema integrado.',
-        whyMoat: 'O custo de migração é a reorganização de toda a inteligência financeira.',
-        defense: 'Altíssimo Switching Cost.',
-        description: 'O cliente permanece para gerir o patrimônio gerado.',
-        level: 'high',
-      },
-      {
-        id: 'embedded',
-        title: 'Embedded Finance B2B2C',
-        what: 'Distribuição em massa integrada a ERPs e parceiros.',
-        whyMoat: 'CAC próximo de zero e presença no ponto de decisão.',
-        defense: 'Contratos Exclusivos + Integração Profunda.',
-        description: 'O produto roda onde o cliente já opera.',
-        level: 'medium',
-      },
-    ],
-    synergy: 'Nenhum moat funciona isolado. Juntos, eles formam uma fortaleza.',
-  },
-  valor: {
-    headline: 'Realização de Valor',
-    subheadline: 'Dimensionamento de mercado e dinâmica de valuation.',
-    tam: {
-      value: 'R$ 115 BILHÕES',
-      label: 'Total Addressable Market (TAM)',
-      description: 'Estoque de ativos judiciais no Brasil em fase de consolidação.',
-    },
-    multiples: [
-      { category: 'Serviços (Consultoria)', multiplier: '2-3x', example: 'R$ 50M receita $\\rightarrow$ R$ 150M valuation' },
-      { category: 'Fintech (Banking)', multiplier: '3-5x', example: 'R$ 50M receita $\\rightarrow$ R$ 250M valuation' },
-      { category: 'Plataforma (Tech)', multiplier: '7-10x', example: 'R$ 50M receita $\\rightarrow$ R$ 500M valuation' },
-      { category: 'Ecossistema (OS)', multiplier: '10-15x', example: 'R$ 50M receita $\\rightarrow$ R$ 750M valuation' },
-    ],
-    conclusion: {
-      title: 'Síntese Estratégica e Decisões Críticas',
-      body: [
-        'Você TEM a capacidade técnica diferenciada.',
-        'Você TEM os ativos instalados e timing favorável.',
-        'O desafio é a conversão de vantagem técnica em liderança de mercado.',
-        'A escolha do modelo define seu valuation e seu futuro.',
-      ],
-      cta: 'Qual deles é o correto para seu momento?',
-    },
   },
 };

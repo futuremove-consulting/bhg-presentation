@@ -6,8 +6,7 @@ import { PosicionamentoCompetitivoTab } from '@/components/tabs/PosicionamentoCo
 import { DiagnosticoBHGTab } from '@/components/tabs/DiagnosticoBHGTab';
 import { TeseEstrategicaTab } from '@/components/tabs/TeseEstrategicaTab';
 import { CenariosModeloTab } from '@/components/tabs/CenariosModeloTab';
-import { VantagensSustentaveisTab } from '@/components/tabs/VantagensSustentaveisTab';
-import { RealizacaoValorTab } from '@/components/tabs/RealizacaoValorTab';
+
 
 const tabComponents: Record<string, React.ComponentType> = {
   contexto: ContextoMercadoTab,
@@ -15,11 +14,9 @@ const tabComponents: Record<string, React.ComponentType> = {
   diagnostico: DiagnosticoBHGTab,
   tese: TeseEstrategicaTab,
   modelos: CenariosModeloTab,
-  vantagens: VantagensSustentaveisTab,
-  valor: RealizacaoValorTab,
 };
 
-const validIds = ['contexto', 'posicionamento', 'diagnostico', 'tese', 'modelos', 'vantagens', 'valor'];
+const validIds = ['contexto', 'posicionamento', 'diagnostico', 'tese', 'modelos'];
 
 function getTabFromHash(): string {
   if (typeof window === 'undefined') return 'contexto';

@@ -3,16 +3,16 @@
 import { presentationData } from '@/data/presentation';
 import { Heading } from '@futuremove/ui';
 import { Card } from '@futuremove/ui';
-import { Grid } from '@futuremove/ui';
 
 export function DiagnosticoBHGTab() {
   const data = presentationData.diagnostico;
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-32">
       {/* Hero Section */}
-      <section className="py-12 text-center">
-        <Heading as="h1" size="2xl" className="mb-4 text-balance text-white">
+      <section className="py-24 text-center">
+        <div className="section-label justify-center">Diagnóstico</div>
+        <Heading as="h1" size="2xl" className="mb-6 text-balance text-white max-w-4xl mx-auto">
           {data.headline}
         </Heading>
         <p className="text-xl text-gray-400 max-w-2xl mx-auto">
@@ -20,9 +20,12 @@ export function DiagnosticoBHGTab() {
         </p>
       </section>
 
+      <div className="section-divider" />
+
       {/* Matrix Section */}
-      <section className="space-y-12">
+      <section className="py-12 space-y-12">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Posição Atual</div>
           <Heading as="h2" size="xl" className="text-white">{data.matrix.title}</Heading>
           <p className="text-gray-400">{data.matrix.description}</p>
         </div>
@@ -61,48 +64,51 @@ export function DiagnosticoBHGTab() {
         </div>
       </section>
 
+      <div className="section-divider" />
+
       {/* SWOT Section */}
-      <section className="space-y-12 pb-24">
+      <section className="py-12 space-y-12 pb-24">
         <div className="text-center space-y-4">
+          <div className="section-label justify-center">Capacidade Interna</div>
           <Heading as="h2" size="xl" className="text-white">{data.swot.title || 'Análise de Capacidade Interna'}</Heading>
         </div>
 
-        <Grid className="grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="md" className="text-emerald-500">Forças Únicas</Heading>
+            <Heading as="h3" size="xl" className="text-emerald-500">Forças Únicas</Heading>
             <ul className="space-y-2">
               {data.swot.strengths.map((s, i) => (
                 <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-emerald-500">✓</span> {s}
+                  <span className="text-emerald-500">&#10003;</span> {s}
                 </li>
               ))}
             </ul>
           </Card>
 
           <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="md" className="text-red-500">Fraquezas Estruturais</Heading>
+            <Heading as="h3" size="xl" className="text-red-500">Fraquezas Estruturais</Heading>
             <ul className="space-y-2">
               {data.swot.weaknesses.map((w, i) => (
                 <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-red-500">✗</span> {w}
+                  <span className="text-red-500">&#10007;</span> {w}
                 </li>
               ))}
             </ul>
           </Card>
 
           <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="md" className="text-blue-500">Oportunidades de Mercado</Heading>
+            <Heading as="h3" size="xl" className="text-blue-500">Oportunidades de Mercado</Heading>
             <ul className="space-y-2">
               {data.swot.opportunities.map((o, i) => (
                 <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-blue-500">→</span> {o}
+                  <span className="text-blue-500">&rarr;</span> {o}
                 </li>
               ))}
             </ul>
           </Card>
 
           <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="md" className="text-orange-500">Ameaças Externas</Heading>
+            <Heading as="h3" size="xl" className="text-orange-500">Ameaças Externas</Heading>
             <ul className="space-y-2">
               {data.swot.threats.map((t, i) => (
                 <li key={i} className="text-sm text-gray-300 flex gap-2">
@@ -111,7 +117,7 @@ export function DiagnosticoBHGTab() {
               ))}
             </ul>
           </Card>
-        </Grid>
+        </div>
       </section>
     </div>
   );
