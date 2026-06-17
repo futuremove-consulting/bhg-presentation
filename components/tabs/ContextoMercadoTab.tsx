@@ -2,6 +2,8 @@
 
 import { presentationData } from '@/data/presentation';
 import { Heading, Card, MatrizPosicionamento } from '@futuremove/ui';
+import { ExpandedPlayersMatrix } from '@/components/ExpandedPlayersMatrix';
+import { MarketGrowthChart } from '@/components/MarketGrowthChart';
 
 export function ContextoMercadoTab() {
   const data = presentationData.contexto;
@@ -51,26 +53,7 @@ export function ContextoMercadoTab() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-gray-800 text-xs uppercase text-gray-500">
-                  <th className="py-4 px-4">Segmento</th>
-                  <th className="py-4 px-4">Crescimento</th>
-                  <th className="py-4 px-4">Observação</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.growthDynamics.items.map((item, idx) => (
-                  <tr key={idx} className="border-b border-gray-900/50">
-                    <td className="py-4 px-4 text-white font-medium">{item.segment}</td>
-                    <td className="py-4 px-4 text-white font-bold">{item.growth}</td>
-                    <td className="py-4 px-4 text-gray-400 text-sm">{item.observation}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <MarketGrowthChart title="" items={data.growthDynamics.items} />
         </div>
       </section>
 
@@ -85,16 +68,7 @@ export function ContextoMercadoTab() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto items-start">
-          <MatrizPosicionamento players={[
-            { name: 'Precato', x: 72, y: 72, color: 'bg-sky-500 text-sky-500' },
-            { name: 'Prêambulo Bank', x: 28, y: 25, color: 'bg-emerald-500 text-emerald-500' },
-            { name: 'XP Litigation', x: 55, y: 58, color: 'bg-yellow-500 text-yellow-500' },
-            { name: 'Bancos Trad.', x: 80, y: 78, color: 'bg-zinc-500 text-zinc-500' },
-            { name: 'BHG Atual', x: 18, y: 78, color: 'bg-red-400 text-red-400' },
-            { name: 'BHG Alvo', x: 85, y: 12, color: 'bg-[#6856f5] text-[#6856f5]' },
-          ]}
-          xLabel="Escala Operacional →"
-          yLabel="Integração Vertical →" />
+          <ExpandedPlayersMatrix />
 
           <div className="space-y-8">
             <div className="space-y-4">

@@ -3,6 +3,8 @@
 import { presentationData } from '@/data/presentation';
 import { Heading } from '@futuremove/ui';
 import { Card } from '@futuremove/ui';
+import { ModelsComparison } from '@/components/ModelsComparison';
+import { ValuationComparison } from '@/components/ValuationComparison';
 
 export function CenariosModeloTab() {
   const data = presentationData.modelos;
@@ -24,6 +26,11 @@ export function CenariosModeloTab() {
 
       {/* Models Section */}
       <section className="py-12 space-y-12">
+        <div className="text-center space-y-4">
+          <div className="section-label justify-center">Arquétipos</div>
+          <Heading as="h2" size="xl" className="text-white">Três Arquétipos Estratégicos</Heading>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {data.models.map((model) => (
             <Card key={model.id} variant="elevated" className="flex flex-col h-full p-10">
@@ -90,6 +97,24 @@ export function CenariosModeloTab() {
           ))}
         </div>
       </section>
+
+      {/* Models Comparison Table */}
+      <section className="py-12 space-y-12">
+        <div className="max-w-6xl mx-auto">
+          <ModelsComparison models={data.models} />
+        </div>
+      </section>
+
+      <div className="section-divider" />
+
+      {/* Valuation Comparison */}
+      <section className="py-12 space-y-12">
+        <div className="max-w-5xl mx-auto">
+          <ValuationComparison models={data.models} />
+        </div>
+      </section>
+
+      <div className="section-divider" />
 
       {/* Conclusion Section */}
       <section className="max-w-3xl mx-auto text-center pb-24">
