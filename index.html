@@ -13,16 +13,17 @@
 <div id="app">
   <header class="site-header">
     <div class="header-inner">
-      <span class="header-brand">FutureMove</span>
-      <span class="header-tagline">Consultoria Estratégica</span>
+      <a class="header-logo" href="https://www.futuremove.com.br/" target="_blank" rel="noopener" aria-label="FutureMove Consulting — abrir site">
+        <img src="logo-light.svg" alt="FutureMove" class="logo-img">
+      </a>
+      <nav class="header-nav" role="tablist" aria-label="Seções da apresentação">
+        <button class="tab-btn active" data-tab="contexto" id="tab-btn-contexto" role="tab" aria-selected="true" aria-controls="tab-contexto">CONTEXTO DE MERCADO</button>
+        <button class="tab-btn" data-tab="posicionamento" id="tab-btn-posicionamento" role="tab" aria-selected="false" aria-controls="tab-posicionamento">POSICIONAMENTO</button>
+        <button class="tab-btn" data-tab="diagnostico" id="tab-btn-diagnostico" role="tab" aria-selected="false" aria-controls="tab-diagnostico">DIAGNÓSTICO BHG</button>
+        <button class="tab-btn" data-tab="tese" id="tab-btn-tese" role="tab" aria-selected="false" aria-controls="tab-tese">TESE ESTRATÉGICA</button>
+        <button class="tab-btn" data-tab="modelos" id="tab-btn-modelos" role="tab" aria-selected="false" aria-controls="tab-modelos">CENÁRIOS DE MODELO</button>
+      </nav>
     </div>
-    <nav class="header-nav" role="tablist" aria-label="Seções da apresentação">
-      <button class="tab-btn active" data-tab="contexto" id="tab-btn-contexto" role="tab" aria-selected="true" aria-controls="tab-contexto">CONTEXTO DE MERCADO</button>
-      <button class="tab-btn" data-tab="posicionamento" id="tab-btn-posicionamento" role="tab" aria-selected="false" aria-controls="tab-posicionamento">POSICIONAMENTO</button>
-      <button class="tab-btn" data-tab="diagnostico" id="tab-btn-diagnostico" role="tab" aria-selected="false" aria-controls="tab-diagnostico">DIAGNÓSTICO BHG</button>
-      <button class="tab-btn" data-tab="tese" id="tab-btn-tese" role="tab" aria-selected="false" aria-controls="tab-tese">TESE ESTRATÉGICA</button>
-      <button class="tab-btn" data-tab="modelos" id="tab-btn-modelos" role="tab" aria-selected="false" aria-controls="tab-modelos">CENÁRIOS DE MODELO</button>
-    </nav>
   </header>
 
   <main class="main-content">
@@ -32,6 +33,14 @@
     <div id="tab-tese" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-tese"></div>
     <div id="tab-modelos" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-modelos"></div>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <img src="logo-light.svg" alt="FutureMove" class="footer-logo">
+      <div class="footer-accent" role="presentation"></div>
+      <span class="footer-copy">(c) 2026 FutureMove Consulting. Todos os direitos reservados.</span>
+    </div>
+  </footer>
 </div>
 
 <script type="module" src="app.js"></script>

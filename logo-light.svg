@@ -1,0 +1,8 @@
+<svg width="290" height="58" viewBox="0 0 290 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0, 0)">
+    <rect x="4" y="22" width="17" height="17" rx="2" fill="#FFFFFF"/>
+    <rect x="14" y="10" width="30" height="30" rx="3.5" fill="#6856f5"/>
+    <rect x="4" y="22" width="17" height="17" rx="2" fill="#FFFFFF" opacity="0.55"/>
+  </g>
+  <text x="65" y="44" fill="#FFFFFF" style="font-family: 'DM Serif Display', serif; font-size: 38px; font-weight: 400; letter-spacing: -1px;">Future<tspan style="font-style: italic; font-weight: 800; fill: #6856f5;">Move</tspan></text>
+</svg>
