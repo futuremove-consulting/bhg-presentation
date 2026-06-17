@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import '@futuremove/ui/styles';
 import './globals.css';
 import { TabNavigation } from '@/components/TabNavigation';
 import { Header } from '@/components/Header';
