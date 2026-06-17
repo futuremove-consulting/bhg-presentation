@@ -239,7 +239,7 @@ export const data = {
     ]
   },
   conclusao: {
-    headline: 'Conclusão Estratégica',
+    headline: 'Conclusão',
     subheadline: 'O caminho para a liderança no mercado de ativos judiciais',
     marketInflection: {
       title: 'O Mercado em Inflexão',
