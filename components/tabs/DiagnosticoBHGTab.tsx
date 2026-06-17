@@ -2,7 +2,7 @@
 
 import { presentationData } from '@/data/presentation';
 import { Heading } from '@futuremove/ui';
-import { Card } from '@futuremove/ui';
+import { SWOTMatrix } from '@/components/SWOTMatrix';
 
 export function DiagnosticoBHGTab() {
   const data = presentationData.diagnostico;
@@ -73,50 +73,8 @@ export function DiagnosticoBHGTab() {
           <Heading as="h2" size="xl" className="text-white">{data.swot.title || 'Análise de Capacidade Interna'}</Heading>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="xl" className="text-emerald-500">Forças Únicas</Heading>
-            <ul className="space-y-2">
-              {data.swot.strengths.map((s, i) => (
-                <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-emerald-500">&#10003;</span> {s}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="xl" className="text-red-500">Fraquezas Estruturais</Heading>
-            <ul className="space-y-2">
-              {data.swot.weaknesses.map((w, i) => (
-                <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-red-500">&#10007;</span> {w}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="xl" className="text-blue-500">Oportunidades de Mercado</Heading>
-            <ul className="space-y-2">
-              {data.swot.opportunities.map((o, i) => (
-                <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-blue-500">&rarr;</span> {o}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          <Card variant="bordered" className="p-8 space-y-4">
-            <Heading as="h3" size="xl" className="text-gray-400">Ameaças Externas</Heading>
-            <ul className="space-y-2">
-              {data.swot.threats.map((t, i) => (
-                <li key={i} className="text-sm text-gray-300 flex gap-2">
-                  <span className="text-orange-500">!</span> {t}
-                </li>
-              ))}
-            </ul>
-          </Card>
+        <div className="max-w-5xl mx-auto">
+          <SWOTMatrix data={data.swot} />
         </div>
       </section>
     </div>
