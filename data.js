@@ -47,11 +47,11 @@ export const data = {
   },
   segmentos: {
     headline: 'Quem é o Cliente: Segmentação e Psicografia do Mercado',
-    subheadline: 'O mercado de ativos judiciais não é homogêneo. O valor da plataforma BHG reside em resolver dores específicas para três perfis distintos, criando um ecossistema de dependência mútua.',
-    personas: [
+    subheadline: 'O mercado de ativos judiciais não é homogêneo. O valor da plataforma BHG reside em resolver dores específicas para perfis individuais e corporativos, criando um ecossistema de dependência mútua.',
+    individualProfiles: [
       {
         id: 'credor',
-        role: 'O Credor (Individual ou Corporate)',
+        role: 'O Credor',
         archetype: 'Buscador de Liquidez',
         pains: [
           'Incerteza total sobre prazos de pagamento',
@@ -67,39 +67,342 @@ export const data = {
         color: 'var(--blue)'
       },
       {
-        id: 'parceiro',
-        role: 'O Parceiro (Advogados e Contadores)',
-        archetype: 'O Multiplicador de Valor',
+        id: 'gestor',
+        role: 'O Gestor Financeiro / CFO',
+        archetype: 'Otimizador de Passivos',
         pains: [
-          'Processos manuais e lentos de liquidação de ativos',
-          'Perda de receita por falta de produtos financeiros integrados',
-          'Risco reputacional ao indicar parceiros financeiros não especializados'
+          'Débitos tributários acumulados e pressão fiscal',
+          'Risco de inscrição em Dívida Ativa e bloqueio de contas',
+          'Dificuldade em integrar ativos judiciais na gestão financeira'
         ],
         gains: [
-          'Monetização de novas linhas de serviço (Consultoria Financeira)',
-          'Redução drástica do ciclo de fechamento de operações',
-          'Acesso a infraestrutura de banking para seus próprios clientes'
+          'Eliminação de débitos via compensação estruturada',
+          'Economia real sobre o valor do débito original',
+          'Regularidade fiscal para operar e crescer'
         ],
-        valueProp: 'Evoluir de um prestador de serviços jurídico/contábil para um consultor de estratégia patrimonial.',
+        valueProp: 'Eliminar passivos tributários utilizando ativos judiciais, transformando dívida em eficiência fiscal.',
         color: 'var(--purple)'
       },
       {
-        id: 'investidor',
-        role: 'O Investidor (Qualificados e Institucionais)',
-        archetype: 'O Alocador de Alpha',
+        id: 'socio',
+        role: 'O Empresário / Sócio',
+        archetype: 'Visionário de Expansão',
         pains: [
-          'Falta de ativos de renda fixa com retornos acima da Selic e risco controlado',
-          'Opacidade na originação e precificação de precatórios',
-          'Dificuldade em escalar alocações sem risco de concentração'
+          'Capital parado em precatórios enquanto oportunidades passam',
+          'Relutância em vender ativos com deságio excessivo',
+          'Necessidade de crédito sem diluição de equity'
         ],
         gains: [
-          'Acesso a ativos reais com colateral judicial robusto',
+          'Alavancagem de ativos para novos investimentos',
+          'Manutenção da propriedade do ativo enquanto usa a liquidez',
+          'Crescimento acelerado via crédito com garantia'
+        ],
+        valueProp: 'Usar o ativo judicial como alavanca financeira para expansão, sem abrir mão do valor final.',
+        color: 'var(--amber)'
+      },
+      {
+        id: 'investidor',
+        role: 'O Investidor Qualificado',
+        archetype: 'Alocador de Alpha',
+        pains: [
+          'Saturação de ativos de renda fixa tradicionais',
+          'Opacidade na originação e precificação de precatórios',
+          'Risco de concentração em poucos ativos'
+        ],
+        gains: [
+          'Acesso a ativos reais com colateral público robusto',
           'Sourcing de alta qualidade via orquestração de advocacia e tributação',
           'Escalabilidade via FIDCs regulados (CVM 175)'
         ],
-        valueProp: 'Acessar a maior ineficiência de precificação do mercado brasileiro com a menor fricção operacional.',
+        valueProp: 'Acessar a maior ineficiência de precificação do mercado com a menor fricção operacional.',
         color: 'var(--emerald)'
+      },
+      {
+        id: 'parceiro',
+        role: 'O Parceiro (Advogado/Contador)',
+        archetype: 'Multiplicador de Valor',
+        pains: [
+          'Processos manuais e lentos de liquidação de ativos',
+          'Perda de receita por falta de produtos financeiros integrados',
+          'Risco reputacional ao indicar parceiros não especializados'
+        ],
+        gains: [
+          'Monetização de novas linhas de serviço',
+          'Redução drástica do ciclo de fechamento de operações',
+          'Posicionamento como consultor de estratégia patrimonial'
+        ],
+        valueProp: 'Evoluir de um prestador de serviços para um orquestrador de valor financeiro para seus clientes.',
+        color: 'var(--gray-dark)'
       }
+    ],
+    corporateProfiles: [
+      {
+        id: 'escritorio',
+        role: 'Escritório de Advocacia Médio',
+        focus: 'Liquidez Operacional',
+        pains: [
+          'Necessidade de capital para custas e honorários',
+          'Inexistência de departamento financeiro especializado',
+          'Dependência de fluxos imprevisíveis de honorários'
+        ],
+        gains: [
+          'Crédito rápido com garantia de precatórios de clientes',
+          'Antecipação de honorários para fluxo de caixa saudável',
+          'Foco total na atividade jurídica, delegando o financeiro'
+        ],
+        valueProp: 'Transformar a carteira de precatórios em capital de giro para a operação do escritório.',
+        color: 'var(--purple)'
+      },
+      {
+        id: 'construcao',
+        role: 'Construtora / Indústria',
+        focus: 'Eficiência Fiscal e Expansão',
+        pains: [
+          'Altos débitos de ICMS, ISS e INSS',
+          'Capital imobilizado em indenizações judiciais',
+          'Burocracia excessiva em bancos tradicionais'
+        ],
+        gains: [
+          'Compensação de débitos tributários com precatórios',
+          'Crédito para novas obras com garantia de ativos judiciais',
+          'Redução drástica do passivo fiscal'
+        ],
+        valueProp: 'Sincronizar a recuperação de ativos judiciais com a eliminação de dívidas tributárias.',
+        color: 'var(--blue)'
+      },
+      {
+        id: 'saude',
+        role: 'Clínicas e Hospitais',
+        focus: 'Sustentabilidade e Crescimento',
+        pains: [
+          'Carga tributária elevada em medicamentos e serviços',
+          'Necessidade de capital para modernização e expansão',
+          'Complexidade na gestão de créditos tributários'
+        ],
+        gains: [
+          'Compensação de ICMS/ISS/COFINS via precatórios',
+          'Linhas de crédito para expansão de unidades',
+          'Otimização do fluxo de caixa operacional'
+        ],
+        valueProp: 'Liberar capital através da eficiência fiscal para investir na qualidade do atendimento.',
+        color: 'var(--emerald)'
+      },
+      {
+        id: 'logistica',
+        role: 'Transportadoras e Logística',
+        focus: 'Recuperação e Frota',
+        pains: [
+          'Débitos complexos de ICMS-ST e INSS',
+          'Necessidade constante de renovação de frota',
+          'Ineficiência na gestão de créditos tributários'
+        ],
+        gains: [
+          'Recuperação de impostos via compensação estruturada',
+          'Crédito para aquisição de veículos com garantia de ativos',
+          'Redução de custos operacionais fiscais'
+        ],
+        valueProp: 'Transformar a complexidade tributária do transporte em capital para modernização da frota.',
+        color: 'var(--amber)'
+      },
+      {
+        id: 'familyoffice',
+        role: 'Family Offices / Gestoras',
+        focus: 'Diversificação e Alpha',
+        pains: [
+          'Saturação de ativos tradicionais (renda fixa/ações)',
+          'Falta de acesso a originação qualificada de precatórios',
+          'Necessidade de ativos com baixa correlação com o mercado'
+        ],
+        gains: [
+          'Alocação em FIDCs de alta qualidade',
+          'Retornos consistentes acima do CDI',
+          'Due diligence jurídica rigorosa e especializada'
+        ],
+        valueProp: 'Acessar a maior ineficiência de precificação do país com segurança jurídica institucional.',
+        color: 'var(--blue-dark)'
+      }
+    ],
+    sectorPriority: [
+      { vertical: 'Advocacia', priority: 'P1', product: 'Crédito + Antecipação' },
+      { vertical: 'Construção Civil', priority: 'P1', product: 'Compensação + Crédito' },
+      { vertical: 'Saúde', priority: 'P1', product: 'Compensação + Planejamento' },
+      { vertical: 'Logística/Transporte', priority: 'P2', product: 'Compensação + Crédito' },
+      { vertical: 'Indústria', priority: 'P2', product: 'Compensação + FIDC' },
+      { vertical: 'Varejo', priority: 'P3', product: 'Conta PJ + Crédito' },
+      { vertical: 'Tecnologia', priority: 'P3', product: 'Conta PJ + Planejamento' },
+      { vertical: 'Agronegócio', priority: 'P3', product: 'Compensação + Crédito' },
+    ],
+    matrix: [
+      { segment: 'Varejo (Precatórios < R$ 100k)', focus: 'Volume e Automação', pain: 'Falta de acesso a crédito', solution: 'Banking Digital + Antecipação Automática' },
+      { segment: 'Mid-Market (R$ 100k - R$ 2M)', focus: 'Eficiência e Estrutura', pain: 'Carga tributária no resgate', solution: 'Tributária Integrada + Planejamento Fiscal' },
+      { segment: 'UHNW / Corporate (> R$ 2M)', focus: 'Estratégia e Gestão', pain: 'Risco de concentração/sucessão', solution: 'Gestão Patrimonial + M&A de Ativos' },
+    ]
+  },
+      {
+        id: 'gestor',
+        role: 'O Gestor Financeiro / CFO',
+        archetype: 'Otimizador de Passivos',
+        pains: [
+          'Débitos tributários acumulados e pressão fiscal',
+          'Risco de inscrição em Dívida Ativa e bloqueio de contas',
+          'Dificuldade em integrar ativos judiciais na gestão financeira'
+        ],
+        gains: [
+          'Eliminação de débitos via compensação estruturada',
+          'Economia real sobre o valor do débito original',
+          'Regularidade fiscal para operar e crescer'
+        ],
+        valueProp: 'Eliminar passivos tributários utilizando ativos judiciais, transformando dívida em eficiência fiscal.',
+        color: 'var(--purple)'
+      },
+      {
+        id: 'socio',
+        role: 'O Empresário / Sócio',
+        archetype: 'Visionário de Expansão',
+        pains: [
+          'Capital parado em precatórios enquanto oportunidades passam',
+          'Relutância em vender ativos com deságio excessivo',
+          'Necessidade de crédito sem diluição de equity'
+        ],
+        gains: [
+          'Alavancagem de ativos para novos investimentos',
+          'Manutenção da propriedade do ativo enquanto usa a liquidez',
+          'Crescimento acelerado via crédito com garantia'
+        ],
+        valueProp: 'Usar o ativo judicial como alavanca financeira para expansão, sem abrir mão do valor final.',
+        color: 'var(--amber)'
+      },
+      {
+        id: 'investidor',
+        role: 'O Investidor Qualificado',
+        archetype: 'Alocador de Alpha',
+        pains: [
+          'Saturação de ativos de renda fixa tradicionais',
+          'Opacidade na originação e precificação de precatórios',
+          'Risco de concentração em poucos ativos'
+        ],
+        gains: [
+          'Acesso a ativos reais com colateral público robusto',
+          'Retornos consistentes acima do CDI com baixa correlação com a Bolsa',
+          'Sourcing qualificado via orquestração jurídica'
+        ],
+        valueProp: 'Acessar a maior ineficiência de precificação do mercado com a menor fricção operacional.',
+        color: 'var(--emerald)'
+      },
+      {
+        id: 'parceiro',
+        role: 'O Parceiro (Advogado/Contador)',
+        archetype: 'Multiplicador de Valor',
+        pains: [
+          'Processos manuais e lentos de liquidação de ativos',
+          'Perda de receita por falta de produtos financeiros integrados',
+          'Risco reputacional ao indicar parceiros não especializados'
+        ],
+        gains: [
+          'Monetização de novas linhas de serviço',
+          'Redução drástica do ciclo de fechamento de operações',
+          'Posicionamento como consultor de estratégia patrimonial'
+        ],
+        valueProp: 'Evoluir de um prestador de serviços para um orquestrador de valor financeiro para seus clientes.',
+        color: 'var(--gray-dark)'
+      }
+    ],
+    corporateProfiles: [
+      {
+        id: 'escritorio',
+        role: 'Escritório de Advocacia Médio',
+        focus: 'Liquidez Operacional',
+        pains: [
+          'Necessidade de capital para custas e honorários',
+          'Inexistência de departamento financeiro especializado',
+          'Dependência de fluxos imprevisíveis de honorários'
+        ],
+        gains: [
+          'Crédito rápido com garantia de precatórios de clientes',
+          'Antecipação de honorários para fluxo de caixa saudável',
+          'Foco total na atividade jurídica, delegando o financeiro'
+        ],
+        valueProp: 'Transformar a carteira de precatórios em capital de giro para a operação do escritório.',
+        color: 'var(--purple)'
+      },
+      {
+        id: 'construcao',
+        role: 'Construtora / Indústria',
+        focus: 'Eficiência Fiscal e Expansão',
+        pains: [
+          'Altos débitos de ICMS, ISS e INSS',
+          'Capital imobilizado em indenizações judiciais',
+          'Burocracia excessiva em bancos tradicionais'
+        ],
+        gains: [
+          'Compensação de débitos tributários com precatórios',
+          'Crédito para novas obras com garantia de ativos judiciais',
+          'Redução drástica do passivo fiscal'
+        ],
+        valueProp: 'Sincronizar a recuperação de ativos judiciais com a eliminação de dívidas tributárias.',
+        color: 'var(--blue)'
+      },
+      {
+        id: 'saude',
+        role: 'Clínicas e Hospitais',
+        focus: 'Sustentabilidade e Crescimento',
+        pains: [
+          'Carga tributária elevada em medicamentos e serviços',
+          'Necessidade de capital para modernização e expansão',
+          'Complexidade na gestão de créditos tributários'
+        ],
+        gains: [
+          'Compensação de ICMS/ISS/COFINS via precatórios',
+          'Linhas de crédito para expansão de unidades',
+          'Otimização do fluxo de caixa operacional'
+        ],
+        valueProp: 'Liberar capital através da eficiência fiscal para investir na qualidade do atendimento.',
+        color: 'var(--emerald)'
+      },
+      {
+        id: 'logistica',
+        role: 'Transportadoras e Logística',
+        focus: 'Recuperação e Frota',
+        pains: [
+          'Débitos complexos de ICMS-ST e INSS',
+          'Necessidade constante de renovação de frota',
+          'Ineficiência na gestão de créditos tributários'
+        ],
+        gains: [
+          'Recuperação de impostos via compensação estruturada',
+          'Crédito para aquisição de veículos com garantia de ativos',
+          'Redução de custos operacionais fiscais'
+        ],
+        valueProp: 'Transformar a complexidade tributária do transporte em capital para modernização da frota.',
+        color: 'var(--amber)'
+      },
+      {
+        id: 'familyoffice',
+        role: 'Family Offices / Gestoras',
+        focus: 'Diversificação e Alpha',
+        pains: [
+          'Saturação de ativos tradicionais (renda fixa/ações)',
+          'Falta de acesso a originação qualificada de precatórios',
+          'Necessidade de ativos com baixa correlação com o mercado'
+        ],
+        gains: [
+          'Alocação em FIDCs de alta qualidade',
+          'Retornos consistentes acima do CDI',
+          'Due diligence jurídica rigorosa e especializada'
+        ],
+        valueProp: 'Acessar a maior ineficiência de precificação do país com segurança jurídica institucional.',
+        color: 'var(--blue-dark)'
+      }
+    ],
+    sectorPriority: [
+      { vertical: 'Advocacia', priority: 'P1', product: 'Crédito + Antecipação' },
+      { vertical: 'Construção Civil', priority: 'P1', product: 'Compensação + Crédito' },
+      { vertical: 'Saúde', priority: 'P1', product: 'Compensação + Planejamento' },
+      { vertical: 'Logística/Transporte', priority: 'P2', product: 'Compensação + Crédito' },
+      { vertical: 'Indústria', priority: 'P2', product: 'Compensação + FIDC' },
+      { vertical: 'Varejo', priority: 'P3', product: 'Conta PJ + Crédito' },
+      { vertical: 'Tecnologia', priority: 'P3', product: 'Conta PJ + Planejamento' },
+      { vertical: 'Agronegócio', priority: 'P3', product: 'Compensação + Crédito' },
     ],
     matrix: [
       { segment: 'Varejo (Precatórios < R$ 100k)', focus: 'Volume e Automação', pain: 'Falta de acesso a crédito', solution: 'Banking Digital + Antecipação Automática' },

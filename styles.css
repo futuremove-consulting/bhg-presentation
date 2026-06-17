@@ -41,6 +41,15 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; }
 ul { list-style: none; }
 
+/* Utility Classes */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+
 /* Header */
 .site-header {
   position: sticky;

@@ -79,11 +79,33 @@ export function renderSegmentosTab() {
 
     <section class="section">
       <div class="section-header centered">
-        <div class="section-label centered">Arquétipos de Personas</div>
-        <h2 class="section-title">Quem Movemos e Para Onde</h2>
+        <div class="section-label centered">Camada 1: Perfis Individuais</div>
+        <h2 class="section-title">Decisores e Influenciadores</h2>
       </div>
       <div class="grid-3">
-        ${d.personas.map(p => renderPersonaCard(p)).join('')}
+        ${d.individualProfiles.map(p => renderPersonaCard(p, false)).join('')}
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Camada 2: Perfis Corporativos</div>
+        <h2 class="section-title">Entidades e Operações B2B</h2>
+      </div>
+      <div class="grid-3">
+        ${d.corporateProfiles.map(p => renderPersonaCard(p, true)).join('')}
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Camada 3: Prioridade de Setores</div>
+        <h2 class="section-title">Verticalização do Mercado</h2>
+      </div>
+      <div class="max-w-4xl mx-auto">
+        ${renderSectorPriorityTable(d.sectorPriority)}
       </div>
     </section>
     <div class="section-divider"></div>
@@ -100,12 +122,16 @@ export function renderSegmentosTab() {
   `;
 }
 
-function renderPersonaCard(p) {
+function renderPersonaCard(p, isCorporate) {
+  const label = isCorporate ? p.focus : p.archetype;
   return `
     <div class="card card-elevated p-8" style="border-top: 4px solid ${p.color}">
-      <div class="mb-4">
-        <span class="section-label tiny" style="color: ${p.color}">${p.archetype}</span>
-        <h3 class="subsection-title" style="margin-top: 8px">${p.role}</h3>
+      <div class="mb-4 flex justify-between align-center">
+        <div>
+          <span class="section-label tiny" style="color: ${p.color}">${label}</span>
+          <h3 class="subsection-title" style="margin-top: 8px">${p.role}</h3>
+        </div>
+        ${isCorporate ? `<span class="badge badge-blue" style="font-size: 10px; padding: 2px 6px">B2B</span>` : ''}
       </div>
       <div class="space-y-6">
         <div>
@@ -124,6 +150,35 @@ function renderPersonaCard(p) {
           <p class="card-text" style="font-style: italic; font-weight: 500">"${p.valueProp}"</p>
         </div>
       </div>
+    </div>
+  `;
+}
+
+function renderSectorPriorityTable(priority) {
+  return `
+    <div class="table-wrapper">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Vertical de Mercado</th>
+            <th>Prioridade Estratégica</th>
+            <th>Produto de Entrada</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${priority.map(s => `
+            <tr>
+              <td class="cell-label bold">${s.vertical}</td>
+              <td class="cell-value">
+                <span class="badge ${s.priority === 'P1' ? 'badge-critical' : s.priority === 'P2' ? 'badge-warning' : 'badge-ok'}">
+                  ${s.priority}
+                </span>
+              </td>
+              <td class="cell-value">${s.product}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
     </div>
   `;
 }
