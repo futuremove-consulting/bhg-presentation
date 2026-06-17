@@ -408,6 +408,28 @@ export const data = {
         }
       ]
     },
+    architecture: {
+      title: 'Arquitetura da Solução BHG',
+      subtitle: 'Cinco pilares de negócio suportados por uma base tecnológica unificada',
+      pillars: [
+        { label: 'Crédito & Antecipação', icon: 'credit', color: 'blue', desc: 'Liquidez imediata via FIDC próprio e crédito com garantia de precatório' },
+        { label: 'Compensação Tributária', icon: 'tax', color: 'purple', desc: 'Estruturação de compensações de débitos com precatórios (ICMS, ISS, INSS, IRPJ, CSLL)' },
+        { label: 'Banking & Conta PJ', icon: 'bank', color: 'emerald', desc: 'Conta digital, pagamentos, gestão de recebíveis e infraestrutura bancária licenciada' },
+        { label: 'Advocacia & Originação', icon: 'gavel', color: 'amber', desc: 'Estruturação jurídica, cessão de créditos, habilitação e due diligence processual' },
+        { label: 'Patrimônio & Investimento', icon: 'asset', color: 'indigo', desc: 'FIDCs, gestão de carteira, tokenização e alocação para investidores qualificados' }
+      ],
+      foundation: {
+        label: 'Tecnologia, IA & Dados',
+        description: 'Plataforma unificada de dados jurídicos + IA especializada em precatórios + infraestrutura blockchain para rastreabilidade e contratos digitais',
+        capabilities: [
+          'IA para precificação dinâmica e due diligence automatizada',
+          'Blockchain (Hathor/Ethereum) para registro imutável de cessões',
+          'API de integração com tribunais, ERPs e parceiros bancários',
+          'CRM especializado (white-label Judit Miner) para gestão de pipeline',
+          'Dashboard unificado do cliente: precatórios, débitos, investimentos'
+        ]
+      }
+    }
   },
   modelos: {
     headline: 'Três Caminhos, Três Futuros: Escolha Seu Modelo',

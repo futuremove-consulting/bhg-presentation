@@ -428,6 +428,8 @@ export function renderTeseTab() {
     </section>
     <div class="section-divider"></div>
 
+    ${renderArchitectureDiagram(d.architecture)}
+
     <section class="section">
       <div class="section-header centered">
         <div class="section-label centered">Mudança de Modelo</div>
@@ -918,5 +920,46 @@ function renderVennDiagram() {
       <text x="170" y="260" class="venn-text" fill="#34d399" font-size="14" font-weight="bold">PATRIMÔNIO</text>
       <text x="200" y="160" class="venn-text" fill="#fff" font-size="12" font-weight="bold" text-anchor="middle">INTERSEÇÃO</text>
     </svg>
+  `;
+}
+
+function renderArchitectureDiagram(arch) {
+  const pillarColors = {
+    blue: '#3b82f6',
+    purple: '#6856f5',
+    emerald: '#10b981',
+    amber: '#f59e0b',
+    indigo: '#6366f1'
+  };
+  const pillarsHtml = arch.pillars.map(p => `
+    <div class="arch-pillar" style="border-top: 4px solid ${pillarColors[p.color] || p.color}">
+      <div class="arch-pillar-icon">${p.icon}</div>
+      <h4 class="arch-pillar-title">${p.label}</h4>
+      <p class="arch-pillar-desc">${p.desc}</p>
+    </div>
+  `).join('');
+  const capsHtml = arch.foundation.capabilities.map(c => `<li>${c}</li>`).join('');
+  return `
+    <section class="section">
+      <div class="section-header centered">
+        <div class="section-label centered">Arquitetura da Solução</div>
+        <h2 class="section-title">${arch.title}</h2>
+        <p class="section-desc">${arch.subtitle}</p>
+      </div>
+      <div class="arch-container">
+        <div class="arch-pillars-row">
+          ${pillarsHtml}
+        </div>
+        <div class="arch-foundation">
+          <div class="arch-foundation-label">${arch.foundation.label}</div>
+          <p class="arch-foundation-desc">${arch.foundation.description}</p>
+          <ul class="arch-capabilities">
+            ${capsHtml}
+          </ul>
+        </div>
+        <div class="arch-support-lines"></div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
   `;
 }
