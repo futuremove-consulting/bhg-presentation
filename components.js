@@ -633,7 +633,7 @@ function renderGrowthChart(items) {
   const barWidth = Math.min(60, (800 / items.length) - 20);
   const chartH = 220;
   const chartW = 800;
-  const padL = 10, padR = 20, padB = 60, padT = 10;
+  const padL = 10, padR = 20, padB = 80, padT = 10;
   const plotW = chartW - padL - padR;
   const plotH = chartH - padT - padB;
   const yScale = (v) => {
@@ -654,14 +654,14 @@ function renderGrowthChart(items) {
       <rect x="${x}" y="${y}" width="${barWidth}" height="${h}" rx="4" fill="#6856f5" opacity="0.9">
         <title>${label}: ${item.growth}</title>
       </rect>
-      <text x="${x + barWidth / 2}" y="${chartH - padB + 20}" text-anchor="middle" fill="#9ca3af" font-size="12" transform="rotate(-20, ${x + barWidth / 2}, ${chartH - padB + 20})">${label}</text>
+      <text x="${x + barWidth / 2}" y="${chartH - padB + 14}" text-anchor="middle" fill="var(--text-secondary)" font-size="12" transform="rotate(-45, ${x + barWidth / 2}, ${chartH - padB + 14})">${label}</text>
     `;
   }).join('');
   
   const labels = items.map((item, i) => {
     const h = yScale(item.growth);
     const x = padL + (i * (plotW / items.length)) + ((plotW / items.length) - barWidth) / 2 + barWidth / 2;
-    return `<text x="${x}" y="${chartH - padB - h - 8}" text-anchor="middle" fill="#9ca3af" font-size="12">${item.growth}</text>`;
+    return `<text x="${x}" y="${chartH - padB - h - 8}" text-anchor="middle" fill="var(--text)" font-size="12" font-weight="600">${item.growth}</text>`;
   }).join('');
 
   return `

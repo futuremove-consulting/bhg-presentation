@@ -287,16 +287,17 @@ ul { list-style: none; }
 .trigger-details li::before { content: '•'; position: absolute; left: 4px; color: var(--text-dim); }
 
 .window-box {
-  max-width: 600px;
-  margin: 32px auto 0;
+  width: 100%;
+  margin: 32px 0 0;
   padding: 32px;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  background: var(--purple);
+  border: none;
   border-radius: var(--radius);
   text-align: center;
+  color: #fff;
 }
-.window-label { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 12px; }
-.window-text { font-size: 1.05rem; color: var(--text); font-weight: 500; }
+.window-label { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.window-text { font-size: 1.05rem; color: #fff; font-weight: 500; }
 
 /* Table */
 .table-wrapper { overflow-x: auto; }
