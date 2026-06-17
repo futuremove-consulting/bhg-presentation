@@ -301,8 +301,8 @@ export const data = {
     },
   },
   diagnostico: {
-    headline: 'O Paradoxo BHG: 30 Anos de Expertise, Zero Presença Digital',
-    subheadline: 'BHG tem capacidade técnica para competir em qualquer dimensão do mercado de ativos judiciais — mas sua expressão de mercado é praticamente invisível. Três gaps críticos explicam o paradoxo.',
+    headline: 'O Paradoxo BHG: Expertise Consolidada vs. Presença Fragmentada',
+    subheadline: 'BHG possui a capacidade técnica e a estrutura para dominar o mercado, mas sua expressão digital opera em silos, diluindo a percepção de valor. Três gaps críticos explicam esse paradoxo.',
     matrix: {
       title: 'Posição de BHG na Matriz de Integração',
       description: 'O gap entre a capacidade instalada e a expressão de mercado.',
