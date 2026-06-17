@@ -311,7 +311,7 @@ export const data = {
         { label: 'Integração Banking', value: 'Em expansão — base existente', status: 'exists' },
         { label: 'Integração Tributária', value: '10 anos de operação consolidada', status: 'exists' },
         { label: 'Plataforma Digital', value: 'Inexistente — operação em silos', status: 'critical', gap: 'GAP CRÍTICO #1' },
-        { label: 'Marca e Posicionamento', value: 'Genérica — invisível no mercado', status: 'critical', gap: 'GAP CRÍTICO #2' },
+        { label: 'Marca e Posicionamento', value: 'Fragmentada — sem narrativa unificada', status: 'critical', gap: 'GAP CRÍTICO #2' },
         { label: 'Distribuição e Canais', value: 'Nenhum — 100% reativa', status: 'critical', gap: 'GAP CRÍTICO #3' },
       ],
     },
